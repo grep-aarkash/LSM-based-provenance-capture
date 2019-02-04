@@ -1,0 +1,2 @@
+# LSM-based-provenance-capture
+This is a two-step process. First, using the methodology used in this(http://kayrebt.gforge.inria.fr/assets/pdf/FormaliSE_2017_paper1.pdf) paper, show that the current LSM interface captures all security-related flows in the kernel. Next, given provenance captured at these points, prove (or disprove) that a security violation must show up as an anomaly in the provenance graph.
