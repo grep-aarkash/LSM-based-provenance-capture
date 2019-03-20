@@ -1,0 +1,35 @@
+READ THE MARKED UP PDF!  The valuable part of my "grading" is in the PDF.
+
+Project Proposal and Research Plan
+NAMES: Aarty Kashyap
+TITLE: Proving that LSM-based provenance capture is guaranteed to detect
+a security breach
+
+								MAX
+Proposal							 5	5
+	Clear statement of the problem you
+	are trying to solve; motivation for
+	importance/research.
+
+
+Research Plan
+	Related Work: did enough of a literature search	
+		Understand the context of the work.		4	3
+
+	** You got all the stuff directly related to Camflow, but
+	I'm not sure that's really the only related work
+
+	Conclusion Format: Know what you are trying to
+	accomplish:						2	2
+
+	Experimental Setup: Have a plan for carrying out	3	3
+	your project
+
+	Resources: Have thought about it and have realistic	3	3
+	expectations
+
+	Schedule: Something approaching doable			
+	Includes time to write					3	3
+
+
+Total:								20	19
