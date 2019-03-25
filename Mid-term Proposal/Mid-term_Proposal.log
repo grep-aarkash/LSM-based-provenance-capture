@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.19 (TeX Live 2018) (preloaded format=pdflatex 2018.4.16)  21 MAR 2019 11:17
+This is pdfTeX, Version 3.14159265-2.6-1.40.19 (TeX Live 2018) (preloaded format=pdflatex 2018.4.16)  25 MAR 2019 12:57
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -492,26 +492,38 @@ G,.JBIG2,.JB2,.eps]
 File: epstopdf-sys.cfg 2010/07/13 v1.3 Configuration of (r)epstopdf for TeX Liv
 e
 ))
-LaTeX Font Info:    Try loading font information for U+msa on input line 40.
 
+! LaTeX Error: There's no line here to end.
+
+See the LaTeX manual or LaTeX Companion for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.45 \newline
+             
+Your command was ignored.
+Type  I <command> <return>  to replace it with another command,
+or  <return>  to continue without it.
+
+LaTeX Font Info:    Try loading font information for U+msa on input line 62.
 (/usr/local/texlive/2018/texmf-dist/tex/latex/amsfonts/umsa.fd
 File: umsa.fd 2013/01/14 v3.01 AMS symbols A
 )
-LaTeX Font Info:    Try loading font information for U+msb on input line 40.
+LaTeX Font Info:    Try loading font information for U+msb on input line 62.
 
 (/usr/local/texlive/2018/texmf-dist/tex/latex/amsfonts/umsb.fd
 File: umsb.fd 2013/01/14 v3.01 AMS symbols B
-)
-LaTeX Font Info:    Try loading font information for OT1+pcr on input line 97.
-
-(/usr/local/texlive/2018/texmf-dist/tex/latex/psnfss/ot1pcr.fd
-File: ot1pcr.fd 2001/06/04 font definitions for OT1/pcr.
 ) [1{/usr/local/texlive/2018/texmf-var/fonts/map/pdftex/updmap/pdftex.map}
 
 
 ]
+LaTeX Font Info:    Try loading font information for OT1+pcr on input line 97.
 
-LaTeX Warning: Reference `fig' on page 2 undefined on input line 182.
+(/usr/local/texlive/2018/texmf-dist/tex/latex/psnfss/ot1pcr.fd
+File: ot1pcr.fd 2001/06/04 font definitions for OT1/pcr.
+) [2]
+
+LaTeX Warning: Reference `fig' on page 3 undefined on input line 182.
 
 LaTeX Font Info:    Try loading font information for OMS+ptm on input line 209.
 
@@ -520,7 +532,7 @@ File: omsptm.fd
 )
 LaTeX Font Info:    Font shape `OMS/ptm/m/n' in size <10> not available
 (Font)              Font shape `OMS/cmsy/m/n' tried instead on input line 209.
- [2]
+
 
 ** Conference Paper **
 Before submitting the final camera ready copy, remember to:
@@ -540,7 +552,7 @@ LaTeX Warning: There were undefined references.
 Here is how much of TeX's memory you used:
  4453 strings out of 492649
  64706 string characters out of 6129622
- 139148 words of memory out of 5000000
+ 138148 words of memory out of 5000000
  8259 multiletter control sequences out of 15000+600000
  45569 words of font info for 91 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
@@ -557,7 +569,7 @@ st/fonts/type1/urw/times/utmb8a.pfb></usr/local/texlive/2018/texmf-dist/fonts/t
 ype1/urw/times/utmbi8a.pfb></usr/local/texlive/2018/texmf-dist/fonts/type1/urw/
 times/utmr8a.pfb></usr/local/texlive/2018/texmf-dist/fonts/type1/urw/times/utmr
 i8a.pfb>
-Output written on Mid-term_Proposal.pdf (3 pages, 123512 bytes).
+Output written on Mid-term_Proposal.pdf (3 pages, 124012 bytes).
 PDF statistics:
  59 PDF objects out of 1000 (max. 8388607)
  42 compressed objects within 1 object stream
