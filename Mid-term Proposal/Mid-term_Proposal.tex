@@ -90,15 +90,14 @@ In order to perform such an analysis,  Pasquier et al. have maintained a systema
 
 \subsection{GraphChi}
 
-The representation of the provenance data is in form of a directed acyclic graph (DAG). Every node in the DAG represents an entity, an activity or an agent. Each directed edge represents interaction between each node. Fig.2 represents a simple example. In our context, entities are kernel objects, activities are tasks; and agents are users and groups. Fig 2 represents packet being sent from process P to Q from socket S to T. 
+The representation of the provenance data is in the form of a directed acyclic graph (DAG). Every node in the DAG represents an entity, an activity or an agent. Each directed edge represents an interaction between each node. Fig.2 represents a simple example. In our context, entities are kernel objects, activities are tasks, and agents are users and groups. Fig 2 represents packet being sent from process P to Q from socket S to T. 
 
-We use GraphChi, a vertex-centric graph processing model to generate program models and to generate anomalies. The purpose of utilizing GraphChi is to answer that in case of security violations in the system, are the anomalies reflected in the graphs. 
+We use GraphChi, a vertex-centric graph processing model to generate program models and to generate anomalies. The purpose of utilizing GraphChi is to answer that in case of security violations in the system, are the anomalies reflected in the graphs. This is a tool which we use for ensuring if all anomalies are reflected on the provenance graph after the capture. 
 
 
 \subsection{Previous formalism}
 
-Georget et al. \cite{b3} proposed a formalism to verify the property for complete capture of the information flows called \textit{Complete Mediation}. 
-
+Georget et al. \cite{b3} proposed a formalism to verify the property for complete capture of the information flows called \textit{Complete Mediation}. The authors use a compiler-assisted and reproducible static analysis on Linux kernel to verify that the LSM hooks are correctly placed with respect to operations generating information flows. This ensures that LSM-based information flow monitors can properly track all information flows.
 
 
 
@@ -163,8 +162,12 @@ In order to run the analysis we use the scripts written by Pasquier et al \cite{
 From the analysis we observe that the coverage is not complete. Hence, the attacker can still find ways to attack the system. The coverage for different system calls is different. For eg. we observe that for \_\_x64\_sys\_open system call the coverage is 8 out of 12. This means that out of the 12 hooks which were originally called by this system call, only 8 hooks were implemented. We observe similar coverage for different system calls. 
 
 \subsubsection{Security-related flows}
-
 Based on the coverage we observe a couple of security-related flows which will not be captured by the current provenance capturing mechanism.  If the attack is strictly about extracting information from within an application memory, the effect is not observed. 
+
+\subsection{Anomaly detection}
+Now that we are aware that some attacks are caught by the capture mechanism and there are some attacks which are not. We try to observe if all the attacks whose flow is being recorded by the capture mechanism if it is reflected on the graph. 
+
+From our evaluation, we understand that if the flow is being recorded it does get reflected on the graph. This is observed from the coverage analysis which we obtained from running the call graph scripts. However, currently, there is no formalism to prove so. So an important and very relevant contribution to this work would be to provide some form of formalism to show that this happens. Hence, my goal is to show some form of formalism before the final submission.  
 \section{Conclusion}
 
 After analyzing the results we observe a couple of things about CamFlow architecture, the formalism proposed by Georget et al. and finally about LSM. 
