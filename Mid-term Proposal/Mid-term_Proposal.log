@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.19 (TeX Live 2018) (preloaded format=pdflatex 2018.4.16)  25 MAR 2019 20:59
+This is pdfTeX, Version 3.14159265-2.6-1.40.19 (TeX Live 2018) (preloaded format=pdflatex 2018.4.16)  26 MAR 2019 04:22
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -399,7 +399,11 @@ Package xcolor Info: Model `HSB' substituted by `hsb' on input line 1369.
 Package xcolor Info: Model `Gray' substituted by `gray' on input line 1370.
 Package xcolor Info: Model `wave' substituted by `hsb' on input line 1371.
 )
-(./Mid-term_Proposal.aux)
+(./Mid-term_Proposal.aux
+
+LaTeX Warning: Label `tab1' multiply defined.
+
+)
 \openout1 = `Mid-term_Proposal.aux'.
 
 LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 15.
@@ -416,8 +420,7 @@ LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 15.
 LaTeX Font Info:    ... okay on input line 15.
 LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 15.
 LaTeX Font Info:    Try loading font information for TS1+cmr on input line 15.
-
-(/usr/local/texlive/2018/texmf-dist/tex/latex/base/ts1cmr.fd
+ (/usr/local/texlive/2018/texmf-dist/tex/latex/base/ts1cmr.fd
 File: ts1cmr.fd 2014/09/29 v2.5h Standard LaTeX font definitions
 )
 LaTeX Font Info:    ... okay on input line 15.
@@ -492,81 +495,92 @@ G,.JBIG2,.JB2,.eps]
 File: epstopdf-sys.cfg 2010/07/13 v1.3 Configuration of (r)epstopdf for TeX Liv
 e
 ))
-<Architecture-diagram.png, id=1, 342.27875pt x 272.01625pt>
-File: Architecture-diagram.png Graphic file (type png)
-<use Architecture-diagram.png>
-Package pdftex.def Info: Architecture-diagram.png  used on input line 57.
-(pdftex.def)             Requested size: 176.39923pt x 140.19162pt.
-<DAG.png, id=3, 422.57875pt x 60.225pt>
-File: DAG.png Graphic file (type png)
-<use DAG.png>
-Package pdftex.def Info: DAG.png  used on input line 64.
-(pdftex.def)             Requested size: 176.39923pt x 25.14085pt.
-
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
  [1{/usr/local/texlive/2018/texmf-var/fonts/map/pdftex/updmap/pdftex.map}
 
 
-] [2 <./Architecture-diagram.png> <./DAG.png>]
-LaTeX Font Info:    Try loading font information for TS1+ptm on input line 127.
+]
+<Architecture-diagram.png, id=9, 342.27875pt x 272.01625pt>
+File: Architecture-diagram.png Graphic file (type png)
+<use Architecture-diagram.png>
+Package pdftex.def Info: Architecture-diagram.png  used on input line 55.
+(pdftex.def)             Requested size: 176.39923pt x 140.19162pt.
+<DAG.png, id=11, 422.57875pt x 60.225pt>
+File: DAG.png Graphic file (type png)
+<use DAG.png>
+Package pdftex.def Info: DAG.png  used on input line 75.
+(pdftex.def)             Requested size: 176.39923pt x 25.14085pt.
+ [2 <./Architecture-diagram.png> <./DAG.png>]
+LaTeX Font Info:    Try loading font information for U+msa on input line 122.
+
+(/usr/local/texlive/2018/texmf-dist/tex/latex/amsfonts/umsa.fd
+File: umsa.fd 2013/01/14 v3.01 AMS symbols A
+)
+LaTeX Font Info:    Try loading font information for U+msb on input line 122.
+
+(/usr/local/texlive/2018/texmf-dist/tex/latex/amsfonts/umsb.fd
+File: umsb.fd 2013/01/14 v3.01 AMS symbols B
+)
+! Extra alignment tab has been changed to \cr.
+<template> \endtemplate 
+                        
+l.135 ...rt of the hooks ignored in the analysis.}
+                                                  
+You have given more \span or & marks than there were
+in the preamble to the \halign or \valign now in progress.
+So I'll assume that you meant to type \cr instead.
+
+! Extra alignment tab has been changed to \cr.
+<template> \endtemplate 
+                        
+l.157 ... 29 system calls triggered no LSM hooks.}
+                                                  
+You have given more \span or & marks than there were
+in the preamble to the \halign or \valign now in progress.
+So I'll assume that you meant to type \cr instead.
+
+
+Underfull \vbox (badness 1215) has occurred while \output is active []
+
+ [3]
+LaTeX Font Info:    Try loading font information for TS1+ptm on input line 192.
 
 
 (/usr/local/texlive/2018/texmf-dist/tex/latex/psnfss/ts1ptm.fd
 File: ts1ptm.fd 2001/06/04 font definitions for TS1/ptm.
 )
-Underfull \hbox (badness 10000) in paragraph at lines 127--128
+Underfull \hbox (badness 10000) in paragraph at lines 192--193
 []\OT1/ptm/m/n/8 GERWIN KLEIN, ``Op-er-at-ing sys-tem ver-i-fi-ca-tion|An
  []
 
-LaTeX Font Info:    Try loading font information for U+msa on input line 194.
-(/usr/local/texlive/2018/texmf-dist/tex/latex/amsfonts/umsa.fd
-File: umsa.fd 2013/01/14 v3.01 AMS symbols A
-)
-LaTeX Font Info:    Try loading font information for U+msb on input line 194.
 
-(/usr/local/texlive/2018/texmf-dist/tex/latex/amsfonts/umsb.fd
-File: umsb.fd 2013/01/14 v3.01 AMS symbols B
-)
+Underfull \hbox (badness 10000) in paragraph at lines 257--259
+[]\OT1/ptm/m/n/8 PASQUIER, T. , ``Cam-Flow de-vel-op-ment. In
+ []
 
-LaTeX Warning: Reference `fig' on page 3 undefined on input line 215.
+[4] (./Mid-term_Proposal.aux)
 
-LaTeX Font Info:    Try loading font information for OMS+ptm on input line 242.
-
-(/usr/local/texlive/2018/texmf-dist/tex/latex/psnfss/omsptm.fd
-File: omsptm.fd 
-)
-LaTeX Font Info:    Font shape `OMS/ptm/m/n' in size <12> not available
-(Font)              Font shape `OMS/cmsy/m/n' tried instead on input line 242.
- [3] [4
-
-]
-(./Mid-term_Proposal.aux)
-
-LaTeX Warning: There were undefined references.
+LaTeX Warning: There were multiply-defined labels.
 
  ) 
 Here is how much of TeX's memory you used:
- 4462 strings out of 492649
- 64808 string characters out of 6129622
- 139040 words of memory out of 5000000
- 8262 multiletter control sequences out of 15000+600000
- 48073 words of font info for 93 fonts, out of 8000000 for 9000
+ 4434 strings out of 492649
+ 64390 string characters out of 6129622
+ 137080 words of memory out of 5000000
+ 8242 multiletter control sequences out of 15000+600000
+ 43229 words of font info for 84 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
- 41i,11n,35p,943b,279s stack positions out of 5000i,500n,10000p,200000b,80000s
+ 41i,11n,35p,1073b,267s stack positions out of 5000i,500n,10000p,200000b,80000s
 {/usr/local/texlive/2018/texmf-dist/fonts/enc/dvips/base/8r.enc}</usr/local/t
-exlive/2018/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi12.pfb></usr/local/te
-xlive/2018/texmf-dist/fonts/type1/public/amsfonts/cm/cmr12.pfb></usr/local/texl
-ive/2018/texmf-dist/fonts/type1/public/amsfonts/cm/cmr6.pfb></usr/local/texlive
-/2018/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb></usr/local/texlive/
-2018/texmf-dist/fonts/type1/urw/times/utmb8a.pfb></usr/local/texlive/2018/texmf
--dist/fonts/type1/urw/times/utmbi8a.pfb></usr/local/texlive/2018/texmf-dist/fon
-ts/type1/urw/times/utmr8a.pfb></usr/local/texlive/2018/texmf-dist/fonts/type1/u
-rw/times/utmri8a.pfb>
-Output written on Mid-term_Proposal.pdf (4 pages, 112577 bytes).
+exlive/2018/texmf-dist/fonts/type1/public/amsfonts/cm/cmr6.pfb></usr/local/texl
+ive/2018/texmf-dist/fonts/type1/urw/times/utmb8a.pfb></usr/local/texlive/2018/t
+exmf-dist/fonts/type1/urw/times/utmr8a.pfb></usr/local/texlive/2018/texmf-dist/
+fonts/type1/urw/times/utmri8a.pfb>
+Output written on Mid-term_Proposal.pdf (4 pages, 83266 bytes).
 PDF statistics:
- 55 PDF objects out of 1000 (max. 8388607)
- 36 compressed objects within 1 object stream
+ 39 PDF objects out of 1000 (max. 8388607)
+ 24 compressed objects within 1 object stream
  0 named destinations out of 1000 (max. 500000)
  11 words of extra memory for PDF output out of 10000 (max. 10000000)
 
