@@ -86,7 +86,30 @@ As we have discussed before data provenance records the chronology of ownership,
 
 We chose CamFlow for testing our hypothesis because it adopts the LSM architecture and support for NetFilters which makes it a maintainable practical whole-system provenance implementation.CamFlow maintains an information-flow patch based on Georget et al's \cite{b3}formalism which provides completeness guarantees. The fact that Cam-flow provides completeness guarantees, its a strong choice for researchers to use it as a fault-detection tool \cite{b8}. Pasquier et al. use CamFlow to perform a run-time analysis of whole-system provenance to find intrusions \cite{b6}. However, since the completeness guarantees are specific to kernel version 4.3, we want to provide a formalism which shows that it holds for the updated kernel versions.  
 
-In order to perform such an analysis,  Pasquier et al. have maintained a systematic build script for CamFlow Linux provenance.  This script generates kernel patch for CamFlow Linux provenance capture. It consists of two parts which are running the automated Travis script and  CircleCI script.  The Travis script builds the kernel and eventually builds the kernel patch. The CircleCl script performs kernel analysis.
+In order to perform such an analysis,  Pasquier et al. have maintained a systematic build script for CamFlow Linux provenance.  This script generates kernel patch for CamFlow Linux provenance capture. It consists of two parts which are running the automated Travis script and  CircleCI script.  The Travis script 
+
+\begin{table}[htbp]
+	\caption{CircleCI scripts}
+	\begin{center}
+		\begin{tabular}{|c|}
+			\hline
+			\textbf{Ignored hooks} \\
+			\hline capset \\
+			\hline capget \\
+			\hline audit\_rule\_match \\
+			\hline audit\_rule\_init \\
+			\hline capable \\
+			\hline capable\_noaudit \\
+			\hline cred\_getsecid \\
+			\hline file\_alloc\\
+			\hline file\_free \\
+			\hline
+			\multicolumn{4}{l}{$^{\mathrm{a}}$Part of the hooks ignored in the analysis.}
+		\end{tabular}
+		\label{tab1}
+	\end{center}
+\end{table}
+builds the kernel and eventually builds the kernel patch. The CircleCl script performs kernel analysis.
 
 \subsection{GraphChi}
 
@@ -95,47 +118,10 @@ The representation of the provenance data is in the form of a directed acyclic g
 We use GraphChi, a vertex-centric graph processing model to generate program models and to generate anomalies. The purpose of utilizing GraphChi is to answer that in case of security violations in the system, are the anomalies reflected in the graphs. This is a tool which we use for ensuring if all anomalies are reflected on the provenance graph after the capture. 
 
 
-\subsection{Previous formalism}
+\subsection{Formalism of complete mediation}
 
 Georget et al. \cite{b3} proposed a formalism to verify the property for complete capture of the information flows called \textit{Complete Mediation}. The authors use a compiler-assisted and reproducible static analysis on Linux kernel to verify that the LSM hooks are correctly placed with respect to operations generating information flows. This ensures that LSM-based information flow monitors can properly track all information flows.
 
-
-
-
-\section{Evaluation}
-
-The evaluation of the system is performed in two parts. The first part is where we focus on the completeness and accuracy of the current CamFlow patch with respect to the new kernel version. We also try to find if all the security-related flows are being captured by the LSM-interface. The second half of our evaluation focuses on the anomaly detection aspect. We want to prove ( or disprove ) if all security related flows are being captured by the LSM-interface, then the anomaly must show up in the provenance graph.
-
-\subsection{LSM interface and security-related flows}
-Before analysing if all security-related flows are being captured by the interface, we first ensure the sompletness and accuracy of the interface
-
-\subsubsection{Completeness}
-We want to ensure that all flows of information between kernel objects are properly recorded. The LSM framework \cite{b14} was originally implemented to support Mandatory Access Control (MAC) schemes but not information flow tracking. Georget et al \cite{b3} through static analysis of the kernel code base demonstrated that LSM framework is applicable to information flow tracking. By adding a small number of hooks it is possible to properly intercept all information flows between kernel objects.
-
-In order to run the analysis we use the scripts written by Pasquier et al \cite{b14} which generates the coverage, hooks, relations, stats and vertices for the system. We can see that some of the hooks such as the ones listed in Table 1 are ignored. The automated CircleCl script performs kernel source code analysis and generates the above mentioned attributes in the docs folder. 
-
-
-\begin{table}[htbp]
-	\caption{CircleCI scripts}
-	\begin{center}
-		\begin{tabular}{|c|}
-			\hline
-			\textbf{Ignored hooks} \\
-		\hline capset \\
-		\hline capget \\
-		\hline audit\_rule\_match \\
-			\hline audit\_rule\_init \\
-			\hline capable \\
-				\hline capable\_noaudit \\
-					\hline cred\_getsecid \\
-						\hline file\_alloc\\
-							\hline file\_free \\
-			\hline
-			\multicolumn{4}{l}{$^{\mathrm{a}}$Part of the hooks ignored in the analysis.}
-		\end{tabular}
-		\label{tab1}
-	\end{center}
-\end{table}
 
 \begin{table}[htbp]
 	\caption{System calls that trigger no hooks}
@@ -144,13 +130,13 @@ In order to run the analysis we use the scripts written by Pasquier et al \cite{
 			\hline
 			\textbf{System calls} \\
 			\hline \_\_x64\_sys\_getresuid
-			 \\
+			\\
 			\hline \_\_x64\_sys\_getresgid \\
-				\hline \_\_x64\_sys\_getpid \\
-					\hline \_\_x64\_sys\_gettid \\
-						\hline \_\_x64\_sys\_getppid \\
-							\hline \_\_x64\_sys\_getuid \\
-	
+			\hline \_\_x64\_sys\_getpid \\
+			\hline \_\_x64\_sys\_gettid \\
+			\hline \_\_x64\_sys\_getppid \\
+			\hline \_\_x64\_sys\_getuid \\
+			
 			
 			\hline
 			\multicolumn{4}{l}{$^{\mathrm{a}}$Total 29 system calls triggered no LSM hooks.}
@@ -158,6 +144,25 @@ In order to run the analysis we use the scripts written by Pasquier et al \cite{
 		\label{tab1}
 	\end{center}
 \end{table}
+
+\section{Evaluation}
+
+The evaluation of the system is performed in two parts. The first part is where we focus on the completeness and accuracy of the current CamFlow patch with respect to the new kernel version. We also try to find if all the security-related flows are being captured by the LSM-interface. The second half of our evaluation focuses on the anomaly detection aspect. We want to prove ( or disprove ) if all security related flows are being captured by the LSM-interface, then the anomaly must show up in the provenance graph.
+
+\subsection{LSM interface and security-related flows}
+Before analysing if all security-related flows are being captured by the interface, we first ensure the sompletness and accuracy of the interface
+
+
+
+
+
+\subsubsection{Completeness}
+We want to ensure that all flows of information between kernel objects are properly recorded. The LSM framework \cite{b14} was originally implemented to support Mandatory Access Control (MAC) schemes but not information flow tracking. Georget et al \cite{b3} through static analysis of the kernel code base demonstrated that LSM framework is applicable to information flow tracking. By adding a small number of hooks it is possible to properly intercept all information flows between kernel objects.
+
+In order to run the analysis we use the scripts written by Pasquier et al \cite{b14} which generates the coverage, hooks, relations, stats and vertices for the system. We can see that some of the hooks such as the ones listed in Table 1 are ignored. The automated CircleCl script performs kernel source code analysis and generates the above mentioned attributes in the docs folder. 
+
+
+
 
 From the analysis we observe that the coverage is not complete. Hence, the attacker can still find ways to attack the system. The coverage for different system calls is different. For eg. we observe that for \_\_x64\_sys\_open system call the coverage is 8 out of 12. This means that out of the 12 hooks which were originally called by this system call, only 8 hooks were implemented. We observe similar coverage for different system calls. 
 
