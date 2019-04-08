@@ -1,0 +1,20 @@
+In order to proceed with the tools for complete static analysis, the 
+methodology is as follows:
+
+1. Using a docker environment for this. 
+2. There are in total 5 tools in total which are required for the complete 
+analysis to be performed. 
+
+The five tools are
+1. Extractor - inserted in the compilation process and adds a pass to 
+specifically dump the CFG representation that GCC creates and maintains.
+
+2. Activity Diagrams - This is shipped with the above tool extractor.
+
+3. PathExaminer - It finds the paths of the system, but, it requires manual
+annotation in order to do so.
+
+4. Callgraphs - extracts function call from a code base. It works one 
+compilation unit at a time. Limited to static calls and does not track neither
+calls though function pointers. 
+
