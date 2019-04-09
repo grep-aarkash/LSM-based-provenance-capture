@@ -1,0 +1,15 @@
+Systems issues are painful:
+
+1. How do you analyse and makes sure that all the paths are being followed?
+2. The issues being faced during the process of running the tools and performing
+some sort of analysis is actually pretty painful.
+3. I don't need to run and work with all the tools which are given.
+4. The Camflow version given actually has a part which is a slight over-approa
+ximation of what needs to be done. 
+5. How the actual analysis is done, is actually being shown here. 
+
+Aarti So clarify your goal here again:
+1. circleci script- This script builds the graph which they discuss in the paper.
+ a. SO build this graph locally and start looking at the data.
+
+2. 
