@@ -1,0 +1,556 @@
+<!DOCTYPE html>
+<!--
+UBC Web Common Look and Feel v. 6.0
+UBC Public Affairs
+t: 604.822.2130
+e: web.admin@ubc.ca
+w: www.webcommunications.ubc.ca 
+-->
+<head>
+<title>UBC ECE Webmail :: [CPSC508] Submission #81 &quot;Completeness-Security Gap in LSM-based...&quot;</title>
+
+<meta http-equiv="content-type" content="text/html; charset=UTF-8" />
+<link href="skins/ece/_ubc_clf/css/clf-required-fullwidth.css?s=1426893131" type="text/css" media="screen" rel="Stylesheet" />
+<link href="skins/ece/_ubc_clf/css/clf-typography.css?s=1426893131" type="text/css" media="screen" rel="Stylesheet" />
+<!--[if lte IE 7]>
+<link href="skins/ece/_ubc_clf/css/ie.css?s=1426893131" type="text/css" media="screen" rel="Stylesheet" />
+<![endif]-->
+<link rel="icon" type="image/vnd.microsoft.icon" href="skins/ece/_ubc_clf/img/favicon.ico" />
+
+<meta name="Robots" content="noindex,nofollow" />
+<meta http-equiv="X-UA-Compatible" content="IE=EDGE" />
+<meta name="viewport" content="" id="viewport" />
+<link rel="stylesheet" type="text/css" href="skins/ece/styles.css?s=1427437066" />
+<link rel="stylesheet" type="text/css" href="skins/ece/mail.css?s=1426893132" />
+<!--[if IE 9]><link rel="stylesheet" type="text/css" href="skins/ece/svggradients.css?s=1426893132" /><![endif]-->
+<!--[if lte IE 8]><link rel="stylesheet" type="text/css" href="skins/ece/iehacks.css?s=1426893132" /><![endif]-->
+<!--[if lte IE 7]><link rel="stylesheet" type="text/css" href="skins/ece/ie7hacks.css?s=1426893132" /><![endif]-->
+<link rel="stylesheet" type="text/css" href="plugins/jqueryui/themes/larry/jquery-ui-1.9.1.custom.css?s=1382384363">
+<link rel="stylesheet" type="text/css" href="plugins/contextmenu/skins/larry/contextmenu.css?s=1362328103">
+<link rel="stylesheet" type="text/css" href="plugins/contextmenu/skins/larry/contextmenu.css?s=1362328103">
+<script type="text/javascript" src="skins/ece/ui.js?s=1426893132"></script>
+
+<meta http-equiv="content-type" content="text/html; charset=UTF-8" />
+<script src="program/js/jquery.min.js?s=1373033278" type="text/javascript"></script>
+<script src="program/js/common.js?s=1390284796" type="text/javascript"></script>
+<script src="program/js/app.js?s=1390284796" type="text/javascript"></script>
+<script type="text/javascript">
+
+var rcmail = new rcube_webmail();
+rcmail.set_env({"task":"mail","x_frame_options":"sameorigin","cookie_domain":"","cookie_path":"\/","cookie_secure":true,"skin":"ece","refresh_interval":60,"session_lifetime":3600,"action":"show","comm_path":".\/?_task=mail","date_format":"yy-mm-dd","uid":"1610","safemode":false,"sender":"CPSC508 HotCRP <noreply@ubc-508-19.hotcrp.com>","permaurl":".\/?_task=mail&_action=show&_mbox=INBOX&_uid=1610","delimiter":".","mailbox":"INBOX","compose_extwin":false,"mimetypes":["text\/plain","text\/html","text\/xml","image\/jpeg","image\/gif","image\/png","image\/bmp","application\/x-javascript","application\/pdf"],"drafts_mailbox":"INBOX.Drafts","trash_mailbox":"INBOX.Trash","junk_mailbox":"INBOX.Junk","read_when_deleted":true,"display_next":true,"mailboxes":{"SU5CT1g":{"id":"INBOX","name":"Inbox","virtual":false},"SU5CT1guRHJhZnRz":{"id":"INBOX.Drafts","name":"Drafts","virtual":false},"SU5CT1guU2VudA":{"id":"INBOX.Sent","name":"Sent","virtual":false},"SU5CT1guSnVuaw":{"id":"INBOX.Junk","name":"Junk","virtual":false},"SU5CT1guVHJhc2g":{"id":"INBOX.Trash","name":"Trash","virtual":false}},"unreadwrap":"%s","collapsed_folders":"","request_token":"21f67448857197350875071ed43e7ac7"});
+rcmail.gui_container("topline-left","topline-left");
+rcmail.gui_container("topline-center","topline-center");
+rcmail.gui_container("topline-right","topline-right");
+rcmail.gui_container("taskbar","taskbar");
+rcmail.gui_container("toolbar","mailtoolbar");
+rcmail.gui_container("forwardmenu","forwardmenu");
+rcmail.gui_container("replyallmenu","replyallmenu");
+rcmail.gui_container("messagemenu","messagemenu");
+rcmail.gui_container("markmenu","markmessagemenu");
+rcmail.add_label({"loading":"Loading...","servererror":"Server Error!","requesttimedout":"Request timed out","refreshing":"Refreshing...","checkingmail":"Checking for new messages...","deletemessage":"Delete message","movemessagetotrash":"Move message to trash","movingmessage":"Moving message(s)...","deletingmessage":"Deleting message(s)...","markingmessage":"Marking message(s)...","purgefolderconfirm":"Do you really want to delete all messages in this folder?","deletemessagesconfirm":"Do you really want to delete selected message(s)?","nomessagesfound":"No messages found in this mailbox."});
+rcmail.register_button('logout', 'rcmbtn101', 'link', '', '', '');
+rcmail.register_button('mail', 'rcmbtn102', 'link', '', 'button-mail button-selected', '');
+rcmail.register_button('addressbook', 'rcmbtn103', 'link', '', 'button-addressbook button-selected', '');
+rcmail.register_button('settings', 'rcmbtn104', 'link', '', 'button-settings button-selected', '');
+rcmail.register_button('logout', 'rcmbtn105', 'link', '', 'button-logout button-selected', '');
+rcmail.register_button('list', 'rcmbtn106', 'link', 'button back', 'button back pressed', '');
+rcmail.register_button('compose', 'rcmbtn107', 'link', 'button compose', 'button compose pressed', '');
+rcmail.register_button('reply', 'rcmbtn108', 'link', 'button reply', 'button reply pressed', '');
+rcmail.register_button('reply-all', 'rcmbtn109', 'link', 'button reply-all', 'button reply-all pressed', '');
+rcmail.register_button('forward', 'rcmbtn110', 'link', 'button forward', 'button forward pressed', '');
+rcmail.register_button('delete', 'rcmbtn111', 'link', 'button delete', 'button delete pressed', '');
+rcmail.register_button('print', 'rcmbtn112', 'link', 'button print', 'button print pressed', '');
+rcmail.register_button('forward-inline', 'rcmbtn113', 'link', 'forwardlink active', '', '');
+rcmail.register_button('forward-attachment', 'rcmbtn114', 'link', 'forwardattachmentlink active', '', '');
+rcmail.register_button('reply-all', 'rcmbtn115', 'link', 'replyalllink active', '', '');
+rcmail.register_button('reply-list', 'rcmbtn116', 'link', 'replylistlink active', '', '');
+rcmail.register_button('print', 'rcmbtn117', 'link', 'icon active', '', '');
+rcmail.register_button('download', 'rcmbtn118', 'link', 'icon active', '', '');
+rcmail.register_button('edit', 'rcmbtn119', 'link', 'icon active', '', '');
+rcmail.register_button('viewsource', 'rcmbtn120', 'link', 'icon active', '', '');
+rcmail.register_button('open', 'rcmbtn121', 'link', 'icon active', '', '');
+rcmail.register_button('mark', 'rcmbtn122', 'link', 'icon active', '', '');
+rcmail.register_button('mark', 'rcmbtn123', 'link', 'icon active', '', '');
+rcmail.register_button('mark', 'rcmbtn124', 'link', 'icon active', '', '');
+rcmail.register_button('mark', 'rcmbtn125', 'link', 'icon active', '', '');
+rcmail.gui_object('mailboxlist', 'mailboxlist');
+rcmail.gui_object('all_headers_row', 'all-headers');
+rcmail.gui_object('all_headers_box', 'headers-source');
+rcmail.gui_object('countdisplay', 'rcmcountdisplay');
+rcmail.register_button('previousmessage', 'rcmbtn126', 'link', 'button prevpage', 'button prevpage pressed', '');
+rcmail.register_button('nextmessage', 'rcmbtn127', 'link', 'button nextpage', 'button nextpage pressed', '');
+rcmail.gui_object('remoteobjectsmsg', 'remote-objects-message');
+rcmail.gui_object('message', 'message');
+</script>
+
+<script type="text/javascript" src="plugins/jqueryui/js/jquery-ui-1.9.1.custom.min.js?s=1382384363"></script>
+<script type="text/javascript" src="plugins/contextmenu/jquery.contextMenu.js?s=1362328103"></script>
+<script type="text/javascript" src="plugins/contextmenu/jquery.mousewheel.js?s=1361736662"></script>
+<script type="text/javascript" src="plugins/contextmenu/contextmenu.js?s=1362328103"></script>
+<script type="text/javascript" src="plugins/contextmenu/jquery.contextMenu.js?s=1362328103"></script>
+<script type="text/javascript" src="plugins/contextmenu/jquery.mousewheel.js?s=1361736662"></script>
+<script type="text/javascript" src="plugins/contextmenu/contextmenu.js?s=1362328103"></script>
+</head>
+
+<body class="noscroll">
+<div id="header">
+<div id="UbcHeaderWrapper">
+	<div id="UbcMegaMenuesWrapper" class="UbcContainer">
+		<div id="UbcMegaMenues" class="UbcContainer"> <a href="#" class="UbcCloseBtn">[X] close</a> </div><!-- End UbcMegaMenues UbcContainer -->
+	</div><!-- End UbcMegaMenuesWrapper UbcContainer -->
+<!-- END: UBC CLF GLOBAL UTILITY HEADER -->
+<!-- BEGIN: UBC CLF VISUAL IDENTITY HEADER -->
+	<ul id="UbcHeader" class="UbcContainer">
+	<li>
+		<h1 id="UbcLogo"><a href="http://www.ubc.ca/">The University of British Columbia</a></h1>
+	</li>
+		<li class="UbcMindLink"><a href="http://www.aplaceofmind.ubc.ca/" id="UbcMindLink">a place of mind</a></li>
+		<li id="UbcHeaderLine"><a href="http://www.ubc.ca/" id="UbcHeaderLink"><span>The University of British Columbia</span></a></li>
+		<li id="UbcSubUnitLine"><a href="https://www.ece.ubc.ca" id="UbcSubUnitLink"><span>Sub Unit Name Here</span></a></li>
+	</ul>
+</div>
+<!-- End UbcHeaderWrapper -->
+<!--
+<div id="topline">
+	<div class="topleft">
+		
+		<a class="about-link" onclick="UI.show_about(this);return false" id="rcmbtn100" href="#">About</a>
+				<a href="https://help.ece.ubc.ca/webmail" target="_blank" class="support-link" id="supportlink">Get support</a>
+			</div>
+	
+	<div class="topright">
+	
+			<span class="username">akashyap18@ece.ubc.ca</span>
+		<a class="button-logout" id="rcmbtn101" href="./?_task=logout" onclick="return rcmail.command('switch-task','logout',this,event)">Logout</a>
+	
+	</div>
+</div>
+-->
+
+<div id="topnav">
+	<div id="taskbar" class="topright">
+	<span class="username">akashyap18@ece.ubc.ca</span>
+	<a class="button-mail" id="rcmbtn102" href="./?_task=mail" onclick="return rcmail.command('switch-task','mail',this,event)"><span class="button-inner">Mail</span></a>
+	<a class="button-addressbook" id="rcmbtn103" href="./?_task=addressbook" onclick="return rcmail.command('switch-task','addressbook',this,event)"><span class="button-inner">Address Book</span></a>
+	
+	<a class="button-settings" id="rcmbtn104" href="./?_task=settings" onclick="return rcmail.command('switch-task','settings',this,event)"><span class="button-inner">Settings</span></a>
+	<a class="button-logout" id="rcmbtn105" href="./?_task=logout" onclick="return rcmail.command('switch-task','logout',this,event)"><span class="button-inner">Logout</span></a>
+	<!--<span class="minmodetoggle"></span>-->
+	</div>
+	<!--<img src="skins/ece/images/roundcube_logo.png" id="toplogo" border="0" alt="Logo" onclick="rcmail.command('switch-task','mail');return false;">-->
+	<a class="logo" onclick="rcmail.command('switch-task','mail');return false;">UBC ECE Webmail</a>
+</div>
+
+<br style="clear:both" />
+</div>
+
+
+
+<div id="mainscreen">
+
+<!-- toolbar -->
+<div id="messagetoolbar" class="toolbar fullwidth">
+	<a class="button back disabled" id="rcmbtn106" href="./?_task=mail&amp;_action=list" onclick="return rcmail.command('list','',this,event)">Back</a>
+	<a class="button compose disabled" title="Create a new message" id="rcmbtn107" href="./?_task=mail&amp;_action=compose" onclick="return rcmail.command('compose','',this,event)">Compose</a>
+<span class="spacer"></span>
+<a class="button reply disabled" title="Reply to sender" id="rcmbtn108" href="#" onclick="return rcmail.command('reply','',this,event)">Reply</a>
+<span class="dropbutton">
+	<a class="button reply-all disabled" title="Reply to list or to sender and all recipients" id="rcmbtn109" href="#" onclick="return rcmail.command('reply-all','',this,event)">Reply all</a>
+	<span class="dropbuttontip" id="replyallmenulink" onclick="UI.show_popup('replyallmenu');return false"></span>
+</span>
+<span class="dropbutton">
+	<a class="button forward disabled" title="Forward the message" id="rcmbtn110" href="#" onclick="return rcmail.command('forward','',this,event)">Forward</a>
+	<span class="dropbuttontip" id="forwardmenulink" onclick="UI.show_popup('forwardmenu');return false"></span>
+</span>
+<a class="button delete disabled" title="Delete message" id="rcmbtn111" href="#" onclick="return rcmail.command('delete','',this,event)">Delete</a>
+<a class="button print disabled" title="Print this message" id="rcmbtn112" href="#" onclick="return rcmail.command('print','',this,event)">Print</a>
+
+<a id="markmessagemenulink" class="button markmessage" title="Mark messages" onclick="UI.show_popup('markmessagemenu');return false" href="#">Mark</a>
+<a id="messagemenulink" class="button more" title="More actions..." onclick="UI.show_popup('messagemenu');return false" href="#">More</a>
+
+<div id="forwardmenu" class="popupmenu">
+	<ul class="toolbarmenu">
+		<li><a class="forwardlink" id="rcmbtn113" href="#" onclick="return rcmail.command('forward-inline','sub',this,event)">Forward inline</a></li>
+		<li><a class="forwardattachmentlink" id="rcmbtn114" href="#" onclick="return rcmail.command('forward-attachment','sub',this,event)">Forward as attachment</a></li>
+		
+	</ul>
+</div>
+
+<div id="replyallmenu" class="popupmenu">
+	<ul class="toolbarmenu">
+		<li><a class="replyalllink" id="rcmbtn115" href="#" onclick="return rcmail.command('reply-all','sub',this,event)">Reply all</a></li>
+		<li><a class="replylistlink" id="rcmbtn116" href="#" onclick="return rcmail.command('reply-list','sub',this,event)">Reply list</a></li>
+		
+	</ul>
+</div>
+
+<div id="messagemenu" class="popupmenu">
+  <ul class="toolbarmenu iconized">
+	<li><a class="icon" id="rcmbtn117" href="#" onclick="return rcmail.command('print','',this,event)"><span class="icon print">Print this message</span></a></li>
+	<li><a class="icon" id="rcmbtn118" href="#" onclick="return rcmail.command('download','',this,event)"><span class="icon download">Download (.eml)</span></a></li>
+	<li><a class="icon" id="rcmbtn119" href="#" onclick="return rcmail.command('edit','new',this,event)"><span class="icon edit">Edit as new</span></a></li>
+	<li><a class="icon" id="rcmbtn120" href="#" onclick="return rcmail.command('viewsource','',this,event)"><span class="icon viewsource">Show source</span></a></li>
+	<li><a target="_blank" class="icon" id="rcmbtn121" href="#" onclick="return rcmail.command('open','',this,event)"><span class="icon extwin">Open in new window</span></a></li>
+	
+  </ul>
+</div>
+
+<div id="markmessagemenu" class="popupmenu">
+  <ul class="toolbarmenu iconized">
+	<li><a class="icon" id="rcmbtn122" href="#" onclick="return rcmail.command('mark','read',this,event)"><span class="icon read">As read</span></a></li>
+	<li><a class="icon" id="rcmbtn123" href="#" onclick="return rcmail.command('mark','unread',this,event)"><span class="icon unread">As unread</span></a></li>
+	<li><a class="icon" id="rcmbtn124" href="#" onclick="return rcmail.command('mark','flagged',this,event)"><span class="icon flagged">As flagged</span></a></li>
+	<li><a class="icon" id="rcmbtn125" href="#" onclick="return rcmail.command('mark','unflagged',this,event)"><span class="icon unflagged">As unflagged</span></a></li>
+	
+  </ul>
+</div>
+
+	<div class="toolbarselect">
+		<select name="mailboxlist" onchange="rcmail.command('moveto', this.options[this.selectedIndex].value)" class="mailboxlist decorated">
+<option value="">Move to...</option>
+<option value="INBOX">Inbox</option>
+<option value="INBOX.Drafts">Drafts</option>
+<option value="INBOX.Sent">Sent</option>
+<option value="INBOX.Junk">Junk</option>
+<option value="INBOX.Trash">Trash</option>
+</select>
+
+	</div>
+</div>
+
+
+<div id="mailview-left">
+
+<!-- folders list -->
+<div id="mailboxcontainer" class="uibox listbox">
+<div class="scroller">
+<ul id="mailboxlist" class="listing"><li id="rcmliSU5CT1g" class="mailbox inbox selected unread"><a href="./?_task=mail&amp;_mbox=INBOX" onclick="return rcmail.command('list','INBOX',this)" rel="INBOX">Inbox<span class="unreadcount">570</span></a>
+</li>
+<li id="rcmliSU5CT1guRHJhZnRz" class="mailbox drafts"><a href="./?_task=mail&amp;_mbox=INBOX.Drafts" onclick="return rcmail.command('list','INBOX.Drafts',this)" rel="INBOX.Drafts">Drafts</a>
+</li>
+<li id="rcmliSU5CT1guU2VudA" class="mailbox sent"><a href="./?_task=mail&amp;_mbox=INBOX.Sent" onclick="return rcmail.command('list','INBOX.Sent',this)" rel="INBOX.Sent">Sent</a>
+</li>
+<li id="rcmliSU5CT1guSnVuaw" class="mailbox junk"><a href="./?_task=mail&amp;_mbox=INBOX.Junk" onclick="return rcmail.command('list','INBOX.Junk',this)" rel="INBOX.Junk">Junk</a>
+</li>
+<li id="rcmliSU5CT1guVHJhc2g" class="mailbox trash"><a href="./?_task=mail&amp;_mbox=INBOX.Trash" onclick="return rcmail.command('list','INBOX.Trash',this)" rel="INBOX.Trash">Trash</a>
+</li>
+</ul>
+
+</div>
+</div>
+
+</div>
+
+<div id="mailview-right" class="offset uibox">
+
+
+<div id="messageheader">
+<span class="moreheaderstoggle"></span>
+
+<h2 class="subject">[CPSC508] Submission #81 &quot;Completeness-Security Gap in LSM-based...&quot;</h2>
+<div class="message-headers">
+<table class="headers-table"><tbody><tr><td class="header-title">From</td>
+<td class="header from"><span class="adr"><a href="mailto:noreply@ubc-508-19.hotcrp.com" onclick="return rcmail.command('compose','noreply@ubc-508-19.hotcrp.com',this)" title="noreply@ubc-508-19.hotcrp.com" class="rcmContactAddress">CPSC508 HotCRP</a><a href="#add" onclick="return rcmail.command('add-contact','CPSC508 HotCRP &lt;noreply@ubc-508-19.hotcrp.com&gt;',this)" title="Add to address book" class="rcmaddcontact"><img src="skins/ece/images/addcontact.png" alt="Add contact"></a></span></td>
+</tr>
+<tr><td class="header-title">To</td>
+<td class="header to"><span class="adr"><a href="mailto:akashyap18@ece.ubc.ca" onclick="return rcmail.command('compose','akashyap18@ece.ubc.ca',this)" title="akashyap18@ece.ubc.ca" class="rcmContactAddress">Aarti Kashyap</a><a href="#add" onclick="return rcmail.command('add-contact','Aarti Kashyap &lt;akashyap18@ece.ubc.ca&gt;',this)" title="Add to address book" class="rcmaddcontact"><img src="skins/ece/images/addcontact.png" alt="Add contact"></a></span></td>
+</tr>
+<tr><td class="header-title">Cc</td>
+<td class="header cc"><span class="adr"><a href="mailto:mseltzer@cs.ubc.ca" onclick="return rcmail.command('compose','mseltzer@cs.ubc.ca',this)" title="mseltzer@cs.ubc.ca" class="rcmContactAddress">mseltzer@cs.ubc.ca</a><a href="#add" onclick="return rcmail.command('add-contact','mseltzer@cs.ubc.ca',this)" title="Add to address book" class="rcmaddcontact"><img src="skins/ece/images/addcontact.png" alt="Add contact"></a></span></td>
+</tr>
+<tr><td class="header-title">Reply-To</td>
+<td class="header replyto"><span class="adr"><a href="mailto:mseltzer@cs.ubc.ca" onclick="return rcmail.command('compose','mseltzer@cs.ubc.ca',this)" title="mseltzer@cs.ubc.ca" class="rcmContactAddress">mseltzer@cs.ubc.ca</a><a href="#add" onclick="return rcmail.command('add-contact','mseltzer@cs.ubc.ca',this)" title="Add to address book" class="rcmaddcontact"><img src="skins/ece/images/addcontact.png" alt="Add contact"></a></span></td>
+</tr>
+<tr><td class="header-title">Date</td>
+<td class="header date">Fri 19:46</td>
+</tr>
+</tbody>
+</table>
+
+</div>
+<div id="full-headers"><div id="all-headers" class="all" style="display:none"><div id="headers-source"></div></div>
+<div class="more-headers show-headers" onclick="return rcmail.command('show-headers','',this)" title="Toggle raw message headers"></div></div>
+
+
+<!-- record navigation -->
+<div id="countcontrols" class="pagenav">
+	<span class="countdisplay" id="rcmcountdisplay">Loading...</span>
+	<a class="button prevpage disabled" title="Show previous message" id="rcmbtn126" href="#" onclick="return rcmail.command('previousmessage','',this,event)"><span class="inner">&lt;</span></a>
+	<a class="button nextpage disabled" title="Show next message" id="rcmbtn127" href="#" onclick="return rcmail.command('nextmessage','',this,event)"><span class="inner">&gt;</span></a>
+</div>
+
+<div id="contactphoto"><img src="./?_email=noreply%40ubc-508-19.hotcrp.com&amp;_action=photo&amp;_task=addressbook" alt=""></div>
+</div>
+
+<div id="messagecontent">
+<div class="rightcol">
+
+</div>
+<div class="leftcol">
+<div id="message-objects">
+<div id="remote-objects-message" class="notice" style="display: none">To protect your privacy, remote images are blocked in this message.&nbsp;<a href="#loadimages" onclick="rcmail.command('load-images')">Display images</a></div>
+</div>
+
+<div id="messagebody"><div class="message-part"><pre>Dear Aarti Kashyap,
+
+We had a record number of submissions to this year's CPSC 508 conference
+and we are delighted to let you know that your paper:
+       Title: Completeness-Security Gap in LSM-based provenance capture
+              mechanisms?
+        Site: <a href="https://ubc-508-19.hotcrp.com/paper/81" target="_blank">https://ubc-508-19.hotcrp.com/paper/81</a>
+has been conditionally accepted.
+
+You will find both paper reviews and PC meeting discussion comments
+included below. We look forward to receiving your camera ready copy by
+April 23.
+
+Contact <a href="mailto:mseltzer@cs.ubc.ca" onclick="return rcmail.command('compose','mseltzer@cs.ubc.ca',this)">mseltzer@cs.ubc.ca</a> with any questions or concerns.
+
+- Margo
+
+Review #81A
+===========================================================================
+
+Overall merit
+-------------
+1. Reject
+
+Paper summary
+-------------
+There are provenance based security modules available for the Linux kernel which 
+can be used for information flow tracking. Linux Security Modules also provide kernel hooks for implementing
+arbitrary access control policies on system call invocation. While these two mechanisms provide similar
+capabilities, they are not a 100% interoperable , i.e. the information captured by one might neither be exactly 
+alike that captured by the other, nor would it be &quot;complete&quot;. 
+This work studies CamFlow - an information flow provenance system that uses the LSM hooks as the underlying 
+capturing mechanism. CamFlow was written a while back, and there have been new releases of the kernel since then.
+This work examines if the information captured by LSM is complete for a newer kernel, and if there exists 
+any security related flow that it does not capture. In the ideal scenario, all security related flows get 
+captured by LSM, show up on the CamFlow provenance graph.
+
+Comments for author
+-------------------
+There are a lot of typos and grammatical errors; don't forget to use a grammar check. Also, the storyline is lacking - what fairy tale are you telling here? It would have been valuable to spend more time explaining how all these components fit in together and what is the workflow to analyze information flow using CamFlow. Also, the formatting in this paper was troubling. For example, tables without captions,  **huge** font size, and the interweaving use of the third person and first person in the narrative - the section on Anomaly Detection breaks the narrative and is quite odd. Also, the paper title does not need a question mark at the end.
+
+
+* * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * *
+
+
+Review #81B
+===========================================================================
+
+Overall merit
+-------------
+1. Reject
+
+Paper summary
+-------------
+This paper explores if the current LSM (Linux Security Modules) interface in CamFlow captures all the security-related flows in an updated kernel version of Linux. This is done to understand and evaluate if the current LSM interface is complete with respect to all security-related workflows. This work also plans to evaluate if security violations show up as anomalies in the provenance graph of the system.
+
+Comments for author
+-------------------
+It would be great to reorder how things are presented so that each necessary piece of information is available when it is needed. For example :
+
+-&gt; Provenance Graph is mentioned a couple of times in the abstract and the introduction but the definition is only provided under the GraphChi section.
+
+-&gt; I am confused as to why a vertex-centric graph processing system is being used to generate program models and anomalies? Is it well suited to the task?
+
+I was confused by the abstract :
+
+-&gt; &quot;in the updated kernel version&quot;. Updated version of which kernel? Is there a specific reason why this kernel matters?
+
+-&gt; Is the goal to find violations of the mediation property of CamFlow? If so then why does it matter?
+
+-&gt; Why is the hypothesis being evaluated important?
+
+-&gt; The LSM abbreviation is used before it was introduced. (I initially thought the paper was regarding LSM trees1)
+
+I think the paper could use examples of security related flows, a provenance graph, an anomaly that is captured, and an anomaly that is not captured. Essentially, a running example would be great for clarity.
+
+Figure 1 is never explained or referenced
+
+Table 2 is never explained or referenced
+
+CircleCI is misspelt as CircleCl twice.... Maybe because of the font it was hard to notice? (Capital &quot;i&quot; is the right spelling, lowercase &quot;l&quot; is not I think)
+
+The paper mentions a coverage analysis but the methodology or the results are never fully described and/or explained.
+
+
+* * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * *
+
+
+Review #81C
+===========================================================================
+
+Overall merit
+-------------
+2. Weak reject
+
+Paper summary
+-------------
+There is existing work in data flow provenance in the Linux system, mostly from work by Pasquier and Georget. This work seems to involve the Linux Security Model, which is a way to place hooks on system calls. By placing hooks on system calls that cause information flows, we can track these flows as they occur. Moreover, there's a way to build a graph of these data flows, and analyze them to detect security violations. This paper raises the following questions: are the existing hooks sufficient to capture all flows, and can we show a formal mapping between the set of flows and the flow graph? The paper is incomplete so the questions are left unattended to for now.
+
+Comments for author
+-------------------
+Please spend more time explaining what the different critical components are: LSM, Camflow, Graph Anomaly, etc. Please walk through the properties you wish to prove in detail. Please state clearly what it is you wish to prove by the end of the paper.
+
+
+* * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * *
+
+
+Review #81D
+===========================================================================
+
+Overall merit
+-------------
+2. Weak reject
+
+Paper summary
+-------------
+Camflow showed that information flow security can be achieved with Linux Security Modules (LSM) if and only if all information flows are tracked by CamFlow (the completeness property), which was developed for Linux 4.3.  This paper follows up that work and asks two questions: (1) Does CamFlow still track all information flows in Linux 5? and (2) If #1 holds, will data leaks or intrusions show up as an anomaly in CamFlow's provenance graph?
+
+The paper finds that for #1 there are some LSM hooks that are un-used by CamFlow and there are some system calls that trigger no hooks, and claims that attacks are possible because of these gaps. For #2, the paper finds that so long as the flow is being recorded, it is reflected in the provenance graph, but does not say if leaks or intrusions will show up as an anomaly.
+
+Comments for author
+-------------------
+This paper would be much stronger if it explained the analysis performed and results in more detail, and put the findings in greater context. The paper explains the scripts that were run, but not how the analysis was done to find missing hooks or low coverage, e.g, was it done with manual inspection of code, or a comparison of script output? For the results, how many hooks were ignored in total? What does it mean that coverage is low? Why are the system calls that trigger no hooks important? 
+
+For instance, the paper says &quot;we can see that some of the hooks listed in Table 1 are ignored&quot;, but what does ignoring mean in this case? I'm assuming this means CamFlow does not use this LSM hook, but I am not sure. It would be great to discuss why CamFlow ignores these hooks? Are they unneeded? Are they recently added but CamFlow was not aware? Is there a significant risk by leaving these hooks out? Would it be easy or hard to add this hook to CamFlow?
+
+What does it mean that &quot;for __x64__sys_open the coverage is 8 out of 12&quot;? Based on the background in the paper, my understanding of this was that a syscall was either instrumented or not.
+
+- It would be great to define what an anomaly is and how they could be detected in the final provenance graph. The conclusion to the second question seems unclear, but to me it seems the answer is yes: so long as information flow is recorded, it shows up in the graph. Is there more to it than that?
+
+Small nits:
+- I'm not clear on where or how GraphChi was used to analyze the graph.
+- Table 2 was unreferenced in the text.
+
+
+* * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * *
+
+
+Review #81E
+===========================================================================
+
+Overall merit
+-------------
+2. Weak reject
+
+Paper summary
+-------------
+The paper has two-fold purpose: 1) CamFlow captures all security related flows in the updated kernel amd 2)  security violations show up as anomaly in the provenance graph.
+
+Comments for author
+-------------------
+Overall, the paper will be more accessible if it is written for a non-verification audience. Also, try to be precise in your statements. Which kernel version is the paper referring to? The paper would have benefitted from a proof-read pass.  I was left wondering about why the discussion section ended abruptly.   A well-elaborated discussion can be a delight to read if ideas are taken to completion.
+
+
+* * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * *
+
+
+Review #81F
+===========================================================================
+
+Overall merit
+-------------
+2. Weak reject
+
+Paper summary
+-------------
+This work studies state of the provenance mechanism in Linux. Authors mostly focus on the using provenance for detecting security violation in Linux. After brief explanation of provenance as a relationship between entities, activities, and agents, authors describe current implementation in Linux that rely on Linux Security Modules (LSM). In a high level, authors want to answer two questions with this study: (1) is LSM interface provided by CamFlow portable, and (2) does security violation always show up as an anomaly in provenance graph. By portability authors intend to evaluate if CamFlow interface developed for Linux kernel 4.x suffices for Linux kernel 5.x. The work includes authors' approach to answer these questions and report on their initial findings. However, conclusive evidences are left out as a future work.
+
+Comments for author
+-------------------
+I have already outlined my main concerns and below are minor concerns. There are mostly about improving the writing. Authors mix &quot;my&quot; and &quot;our&quot; work. Choose one and stick to it. I'd use plural.
+
+Fig. 1 is not referenced nor explained.
+
+Is this Latex from any Systems conference? Table captions look like a footnote. Page numbers are on top?
+
+There are no space between brackets and a word. Similarly no space needed between quotes and words.
+- ( or disprove )
++ (or disprove)
+
+- ” Making sure that the system is following the correct protocol ”
++ ”Making sure that the system is following the correct protocol”
+
+Make consistent spelling of &quot;et al.&quot; and &quot;i.e.,&quot; and &quot;e.g.,&quot; and &quot;CamFlow&quot;.
+
+Full stops in the end of the sentence come after citation:
+- [...] lack complete security coverage. [5]. 
++ [...] lack complete security coverage [5]. 
+
+Too much use of &quot;formal&quot; and &quot;formalism&quot;, sometimes redundant and sometimes unclear. Here are one examples for each case:
+- The simplest way to define provenance is a formal set of documents [...]
++ The simplest way to define provenance is a set of documents [...]
+
+- The first part of the challenge includes answering the question if the completeness formalism is enough to detect all security related flows.
++ The first part of the challenge includes answering the question if the definition of completeness is enough to detect all security related flows.
+
+Note that &quot;completeness formalism&quot; above is replaced with &quot;definition of completeness&quot;. Rule of thumb I suggest: if sentence reads valid without &quot;formal&quot; or &quot;formalism&quot; terms you may as well drop them. Adding those terms does not make your statement stronger.
+
+
+Drop &quot;Operating&quot; word here, PASS and Hi-Fi are not operating systems:
+- However, none of the above mentioned Operating systems provenance capture systems utilize LSM [...]
+- However, none of the above mentioned systems provenance capture systems utilize LSM [...]
+
+Discussion Topics come before Conclusion.
+
+The 508 is &quot;taught&quot; by Margo not &quot;taken&quot;.
+
+There are many other minor nits on use of question marks, commas, and dots, which could be resolved with careful proofreading.
+
+
+</pre>
+</div>
+</div>
+
+</div>
+</div>
+
+<div id="message" class="statusbar"></div>
+
+</div><!-- end mailview-right -->
+
+</div><!-- end mainscreen -->
+
+<script type="text/javascript">
+
+// UI startup
+var UI = new rcube_mail_ui();
+$(document).ready(function(){
+	UI.set('errortitle', 'An error occurred!');
+	UI.init();
+});
+
+</script>
+
+
+
+<div><ul id="rcmFolderMenu" class="popupmenu toolbarmenu"><li class="readfolder separator_below"><a href="#readfolder" class="active"><span>Mark all as read</span></a></li>
+<li class="expunge"><a href="#expunge" class="active"><span>Compact</span></a></li>
+<li class="purge separator_below"><a href="#purge" class="active"><span>Empty</span></a></li>
+<li class="collapseall"><a href="#collapseall" class="active"><span>Collapse all folders</span></a></li>
+<li class="expandall separator_below"><a href="#expandall" class="active"><span>Expand all folders</span></a></li>
+<li class="openfolder"><a href="#openfolder" id="rcm_openfolder" class="active"><span>Open in new window</span></a></li>
+</ul>
+</div>
+
+<div><ul id="rcmFolderMenu" class="popupmenu toolbarmenu"><li class="readfolder separator_below"><a href="#readfolder" class="active"><span>Mark all as read</span></a></li>
+<li class="expunge"><a href="#expunge" class="active"><span>Compact</span></a></li>
+<li class="purge separator_below"><a href="#purge" class="active"><span>Empty</span></a></li>
+<li class="collapseall"><a href="#collapseall" class="active"><span>Collapse all folders</span></a></li>
+<li class="expandall separator_below"><a href="#expandall" class="active"><span>Expand all folders</span></a></li>
+<li class="openfolder"><a href="#openfolder" id="rcm_openfolder" class="active"><span>Open in new window</span></a></li>
+</ul>
+</div>
+
+<script type="text/javascript">
+
+$(document).ready(function(){ 
+rcmail.init();
+});
+</script>
+
+</body>
+</html>
