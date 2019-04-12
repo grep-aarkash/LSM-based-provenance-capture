@@ -1,12 +1,21 @@
 \section{Background}
 
-\textbf{A small recap into data provenance and whole system provenance capture}
+\label{A small recap into data provenance and whole system provenance capture}
 
-There have been multiple provenance capture systems proposed before this PASS, HiFi. However, they had problems 1) struggled to keep abreast with current OS releases 2) Did not have whole system provenance capture gaurantees. Camflow provides easy maintainbility because of its adoption of LSMs and Netfilters.
+There have been multiple provenance capture systems proposed before this PASS, HiFi. However, they had problems 1) struggled to keep abreast with current OS releases 2) Did not have whole system provenance capture guarantees. Camflow provides easy maintainability because of its adoption of LSMs and Net-filters.
 \vskip 0.1in
-\textbf{LSMs}
+\label{LSMs}
 
 LSMs are security frameworks which were initially built for accomodationg differnt access policies such as MAC and DAC. It was however not built for information flow policies. This is why ensuring if it captures all the information flow paths is important. Georget et al. does so...
 \vskip 0.1in
-\textbf{Georget et al methodology}
+\label{Information flow}
+The purpose of information flow control is to monitor the way in which information is disseminated in the system once it is out of its original container. This is unlike access control which can only enforce rules on how whose containers are accessed. Several scientific and technical challenges exist in ensuring complete information flow. One of them being the large Linux kernel code base. Georget tackles this issue in his work.
 
+
+
+\label{Georget methodology}
+In order to improve the state of art of the information flow systems, Georget et. al developed a  plugin for the GCC compiler to easily extract and visualize control flow graphs of kernel functions...
+
+
+\label{Camflow}
+Camflow which utilizes LSM for the whole-system provenance capture. It collects the provenance data and constructs provenance graphs from the collected data. Now that we are aware that Georget's methodology ensures the placement of hooks such that complete information flow is possible, we prove/disprove that the violations are reflected in the provenance graphs.
