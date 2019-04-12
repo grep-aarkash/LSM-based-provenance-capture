@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.18 (TeX Live 2017/Debian) (preloaded format=pdflatex 2019.4.11)  11 APR 2019 13:26
+This is pdfTeX, Version 3.14159265-2.6-1.40.18 (TeX Live 2017/Debian) (preloaded format=pdflatex 2019.4.11)  11 APR 2019 15:24
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -417,40 +417,12 @@ G,.JBIG2,.JB2,.eps]
 File: epstopdf-sys.cfg 2010/07/13 v1.3 Configuration of (r)epstopdf for TeX Liv
 e
 ))
-! Illegal parameter number in definition of \reserved@a.
-<to be read again> 
-                   1
-l.35 ...ernel provenance for intrusion detection.}
-                                                  
-You meant to type ## instead of #, right?
-Or maybe a } was forgotten somewhere earlier, and things
-are all screwed up? I'm going to assume that you meant ##.
-
-! You can't use `macro parameter character #' in horizontal mode.
-<argument> ...on flows? 2) Given the results of ##
-                                                  1 and the data captured by...
-l.35 ...ernel provenance for intrusion detection.}
-                                                  
-Sorry, but I'm not programmed to handle this case;
-I'll just pretend that you didn't ask for it.
-If you're in the wrong mode, you might be able to
-return to the right one by typing `I}' or `I$' or `I\par'.
-
-<Architecture-diagram.png, id=1, 342.27875pt x 272.01625pt>
-File: Architecture-diagram.png Graphic file (type png)
-<use Architecture-diagram.png>
-Package pdftex.def Info: Architecture-diagram.png  used on input line 56.
-(pdftex.def)             Requested size: 176.39923pt x 140.19162pt.
+(./introduction.tex) (./background.tex) (./methodology.tex) (./results.tex)
+(./limitations.tex) (./relatedwork.tex) (./conclusion.tex) (./discussion.tex)
 [1{/var/lib/texmf/fonts/map/pdftex/updmap/pdftex.map}
 
 
 ]
-<DAG.png, id=11, 422.57875pt x 60.225pt>
-File: DAG.png Graphic file (type png)
-<use DAG.png>
-Package pdftex.def Info: DAG.png  used on input line 76.
-(pdftex.def)             Requested size: 176.39923pt x 25.14085pt.
- [2 <./Architecture-diagram.png> <./DAG.png>]
 Missing character: There is no â in font ptmr7t!
 Missing character: There is no € in font ptmr7t!
 Missing character: There is no ™ in font ptmr7t!
@@ -475,34 +447,33 @@ Missing character: There is no “ in font ptmr7t!
 Missing character: There is no â in font ptmr7t!
 Missing character: There is no € in font ptmr7t!
 Missing character: There is no “ in font ptmr7t!
- [3]
 Missing character: There is no â in font ptmr7t!
 Missing character: There is no € in font ptmr7t!
 Missing character: There is no “ in font ptmr7t!
 
-Underfull \hbox (badness 10000) in paragraph at lines 225--227
+Underfull \hbox (badness 10000) in paragraph at lines 231--233
 []\OT1/ptm/m/n/8 PASQUIER, T. , ``Cam-Flow de-vel-op-ment. In
  []
 
-[4
+[2
 
 ] (./Mid-term_Proposal.aux) ) 
 Here is how much of TeX's memory you used:
- 4312 strings out of 492982
- 62583 string characters out of 6134896
- 131779 words of memory out of 5000000
- 7833 multiletter control sequences out of 15000+600000
- 34125 words of font info for 63 fonts, out of 8000000 for 9000
+ 4320 strings out of 492982
+ 62646 string characters out of 6134896
+ 131763 words of memory out of 5000000
+ 7821 multiletter control sequences out of 15000+600000
+ 32989 words of font info for 62 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
- 41i,6n,35p,924b,262s stack positions out of 5000i,500n,10000p,200000b,80000s
+ 41i,6n,35p,920b,272s stack positions out of 5000i,500n,10000p,200000b,80000s
 {/usr/share/texlive/texmf-dist/fonts/enc/dvips/bas
 e/8r.enc}</usr/share/texlive/texmf-dist/fonts/type1/urw/times/utmb8a.pfb></usr/
 share/texlive/texmf-dist/fonts/type1/urw/times/utmr8a.pfb></usr/share/texlive/t
 exmf-dist/fonts/type1/urw/times/utmri8a.pfb>
-Output written on Mid-term_Proposal.pdf (4 pages, 74843 bytes).
+Output written on Mid-term_Proposal.pdf (2 pages, 51452 bytes).
 PDF statistics:
- 35 PDF objects out of 1000 (max. 8388607)
- 21 compressed objects within 1 object stream
+ 24 PDF objects out of 1000 (max. 8388607)
+ 16 compressed objects within 1 object stream
  0 named destinations out of 1000 (max. 500000)
- 11 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 1 words of extra memory for PDF output out of 10000 (max. 10000000)
 
