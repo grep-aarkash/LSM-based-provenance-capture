@@ -1,32 +1,34 @@
 \section{Introduction}
-\textbf{What is provenance im general and with respect to computing?}
+\label{What is provenance im general and with respect to computing?}
 
 Provenance is the chronology of ownership, custody or location of a historical object. These documents are used to guide the authenticity and quality of an item. The term is used in a wide range of fields including science and computing. In computing...
 \vskip 0.1in
-\textbf{Applications of data provenance}
+\label{Applications of data provenance}
 
 Data provenance has wide range of applications ranging from dependibility ( reliability and security) of the system to reproducibility of computational experiments.
 \vskip 0.1in
-\textbf{Role of data povenance in security}
+\label{Role of data povenance in security}
 
 Security is a major concern since there is no permanent fix to detect intrusions. Its a race between attackers and defenders. Data provenance can help detect such intrusions in the kernel. However, in order to make sure that all the intrusions are getting detected, we need a way to capture the entire data flowing in the system which is why we use CamFlow. 
 \vskip 0.1in
-\textbf{Camflow and whole system provenance and LSMs}
+\label{Camflow and whole system provenance and LSMs}
 
 Camflow is a practical implementation of whole-system provenance capture that can be easily maintained and deployed. They use Linux security modules as the underlying framework to capture the data flows.. 
 
 
-\textbf{What are we doing?}
+\label{What are we doing?}
 In this paper, we examine if the whole system provenance capture mechanism developed by Camflow can be utilized for intrusion detection. 
 \vskip 0.1in
-\textbf{Challenge 1}
+\label{Challenge 1}
 
 We first focus on a methodology proposed by Georget et al. to verify if indeed every security related flow goes through an LSM hook. The methodology proposed by Georget et al. had been designed for linux kernel v4.3 to ensure that all security flows are passing through the hooks. We gaurantee the same for v4.20 which is the last formal release. 
 \vskip 0.1in
-\textbf{Challenge 2}
+\label{Challenge 2}
 
 A second challenge in determining if the use of kernel provenance can help in intrusion detection, we prove that a security breach is reflected in the provenance graph it produces. 
 \vskip 0.1in
+
 \textbf{Key contributions}
 
 The key contributions of our work include: 1) analysing the callgraphs obtained from static analysis of the linux kernel to see if all paths are being tracked 2) a formalism to automate the process of analysing the callgraphs for the future versions 3)ensuring that 
+
