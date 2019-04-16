@@ -9,4 +9,11 @@ There have been multiple provenance capture systems proposed before this PASS, H
 LSMs are security frameworks which were initially built for accomodationg differnt access policies such as MAC and DAC. It was however not built for information flow policies. This is why ensuring if it captures all the information flow paths is important. Georget et al. does so...
 \vskip 0.1in
 \textbf{Georget et al methodology}
-
+Georget performs static analysis using a four step approach. 
+\begin{enumerate}
+	\item The model designed by Georget to represent system calls and their execution paths does not describe the C source code. They instead use an internal representation called GIMPLE[]. 
+	\item Each system call is represented by a control flow graph (CFG). 
+	\item The paths in these graphs model the execution paths in the program as defined by the classical graph theory[].
+	\item The system calls are analysed one at a time. 
+	\item Each system call contains multiple functions. These functions are inlined into the system calls to reduce the analysis to 
+\end{enumerate}
