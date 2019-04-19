@@ -16,8 +16,8 @@ In the CFGs which we construct , a node is not a basic block but a simple GIMPLE
 our approach: less impossible paths might be detected as such but
 we never declare as impossible a possible path. A path in the CFG is said to be impossible when any execution
 that would follow it would enter in an impossible state. For example,
-a path including two conditional branchings with incompatible
-conditions would require a boolean expression to be both true and
-false at the same time.
+a path including two conditional branching with incompatible
+conditions would require a Boolean expression to be both true and
+false at the same time. 
 
 
