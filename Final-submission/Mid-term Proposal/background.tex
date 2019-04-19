@@ -5,15 +5,22 @@
 	\caption[Provenance graph]{Process 1 clones process 2. Process 2 writes to a pipe. Process 1 read from the same pipe}
 	\label{fig:graph}
 \end{figure}
+\begin{figure}
+	\centering
+	\includegraphics[width=0.7\linewidth]{Annotated-provenance-graph}
+	\caption[Provenance graph]{Annotated provenance graph}
+	\label{fig:annotated-provenance-graph}
+\end{figure}
 
 To provide context for the rest of the paper, we first introduce a few concepts. We introduce the notion of whole-system provenance, provenance graphs, linux security modules and complete mediation property.
 
 \subsection{Whole-system provenance capture}
+\label{A little about the graphs}
 Data provenance was originally introduced to understand the origin of data in a database. (17,18) According to the W3C (19) standards provenance is defined as a directed acyclic graph (DAG). The vertices in the DAG represent entities(data), activities(transformations of data) and agents(persons or organizations). The edges represent the relationships between these elements. Mapping the graph definition to our system, which is the OS level entities are kernel objects, such as messages, network packets, files etc., but also xattributes, inode attributes, exec call parameters, network addresses, etc.
 Activities are the tasks or processes carrying out manipulations on entities causing data flows. The agents are the persons or the organizations, who control the activities on different entities. These are the users and the groups at the OS level. 
- the agents are users and groups. Fig 1 illustrates an example of the provenance graph. In the example in Fig 1, process 1 clones process 2. Process 2 writes to a pipe and finally process 1 read from the same pipe
+ the agents are users and groups. Fig 1 illustrates these concepts. In the example in Fig 1, process 1 clones process 2. Process 2 writes to a pipe and finally process 1 read from the same pipe.
 \vskip 0.2in 
-
+Processes exchange information via system calls. Some system calls represent information exchange at some discrete point in time e.g, read, write; others may create shared states, e.g, nmap.
 
 
 \label{A small recap into data provenance and whole system provenance capture}

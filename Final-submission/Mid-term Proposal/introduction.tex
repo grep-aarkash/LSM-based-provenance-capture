@@ -3,21 +3,28 @@
 
 Provenance is the chronology of ownership, custody or location of a historical object. These documents are used to guide the authenticity and quality of an item. The term is used in a wide range of fields including science and computing. In computing...
 \vskip 0.1in
+
+
+
+Data provenance can help detect such intrusions in the kernel. Data provenance only provides with the capability to detect intrusions not prevent them. However, in order to make sure that all the intrusions are getting detected, we need a way to capture the complete data flow in the system which is why we chose to work with Camflow. 
+\vskip 0.1in
+\label{Camflow and whole system provenance and LSMs}
+
+Camflow is a practical implementation of whole-system provenance capture that can be easily maintained and deployed. They use Linux security modules as the underlying framework to capture the data flows which provides us the ability to...
+
+
+\label{What are we doing?}
+In this paper, we examine if the whole system provenance capture mechanism developed by Camflow can be utilized for intrusion detection. 
+
+\vskip 0.1in
 \label{Applications of data provenance}
 
 Data provenance has wide range of applications ranging from dependibility ( reliability and security) of the system to reproducibility of computational experiments.
 \vskip 0.1in
 \label{Role of data povenance in security}
 
-Security is a major concern since there is no permanent fix to detect intrusions. Its a race between attackers and defenders. Data provenance can help detect such intrusions in the kernel. However, in order to make sure that all the intrusions are getting detected, we need a way to capture the entire data flowing in the system which is why we use CamFlow. 
-\vskip 0.1in
-\label{Camflow and whole system provenance and LSMs}
-
-Camflow is a practical implementation of whole-system provenance capture that can be easily maintained and deployed. They use Linux security modules as the underlying framework to capture the data flows.. 
-
-
-\label{What are we doing?}
-In this paper, we examine if the whole system provenance capture mechanism developed by Camflow can be utilized for intrusion detection. 
+Security is a major concern since there is no permanent fix to detect intrusions. Its a race between attackers and defenders.
+An example to show that the kernel is still under threat Xioo et al (22) showed that attackers are able to manipulate the running behaviours of operating systems without injecting any malicious code. This type of an attack is called as kernel data attack. With the power of tampering data, the attackers can stealthily subvert various kernel security mechanisms. The 
 \vskip 0.1in
 \label{Challenge 1}
 
@@ -30,5 +37,5 @@ A second challenge in determining if the use of kernel provenance can help in in
 
 \textbf{Key contributions}
 
-The key contributions of our work include: 1) analysing the callgraphs obtained from static analysis of the linux kernel to see if all paths are being tracked 2) a formalism to automate the process of analysing the callgraphs for the future versions 3)ensuring that 
+The key contributions of our work include: 1) analysing the callgraphs obtained from static analysis of the linux kernel to see if all paths are being tracked 2) a formalism to automate the process of analysing the callgraphs for the future versions 3)prove or disprove if indeed  
 
