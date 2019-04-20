@@ -1,0 +1,10 @@
+What is the purpose of the paper?
+
+-The paper is a combination of a lot of seperate established area. It's trying to answer two critical questions. It's trying to understand if the current LSMs interface are capable enough to capture all the security related flows/ 
+What is the hypothesis that the authors are testing?
+What is the experimental setup?
+What is good/bad about the experimental setup?
+How well was the research carried out? What results are presented?
+Do you believe the results? Why/Why not?
+What things might you have done differently?
+What lessons did you learn from reading this paper critically?
