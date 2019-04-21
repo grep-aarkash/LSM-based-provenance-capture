@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.18 (TeX Live 2017/Debian) (preloaded format=pdflatex 2019.4.11)  19 APR 2019 14:37
+This is pdfTeX, Version 3.14159265-2.6-1.40.18 (TeX Live 2017/Debian) (preloaded format=pdflatex 2019.4.11)  20 APR 2019 19:14
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -417,6 +417,13 @@ G,.JBIG2,.JB2,.eps]
 File: epstopdf-sys.cfg 2010/07/13 v1.3 Configuration of (r)epstopdf for TeX Liv
 e
 ))
+Missing character: There is no ‚ in font ptmri7t!
+Missing character: There is no Ä in font ptmri7t!
+Missing character: There is no ú in font ptmri7t!
+Missing character: There is no ‚ in font ptmri7t!
+Missing character: There is no Ä in font ptmri7t!
+Missing character: There is no ù in font ptmri7t!
+
 (./introduction.tex) (./background.tex
 <graph.png, id=1, 1092.08pt x 722.7pt>
 File: graph.png Graphic file (type png)
@@ -443,14 +450,72 @@ File: camflow.png Graphic file (type png)
 <use camflow.png>
 Package pdftex.def Info: camflow.png  used on input line 3.
 (pdftex.def)             Requested size: 361.19843pt x 173.01009pt.
+<LSM-hook.png, id=17, 642.4pt x 396.48125pt>
+File: LSM-hook.png Graphic file (type png)
+<use LSM-hook.png>
+Package pdftex.def Info: LSM-hook.png  used on input line 9.
+(pdftex.def)             Requested size: 176.39923pt x 108.87234pt.
 Missing character: There is no ‚ in font ptmr7t!
 Missing character: There is no Ä in font ptmr7t!
 Missing character: There is no ú in font ptmr7t!
 Missing character: There is no ‚ in font ptmr7t!
 Missing character: There is no Ä in font ptmr7t!
 Missing character: There is no ù in font ptmr7t!
-) (./results.tex) (./limitations.tex) (./relatedwork.tex)
-(./conclusion.tex) (./discussion.tex)
+Missing character: There is no ‚ in font ptmr7t!
+Missing character: There is no Ä in font ptmr7t!
+Missing character: There is no ú in font ptmr7t!
+Missing character: There is no ‚ in font ptmr7t!
+Missing character: There is no Ä in font ptmr7t!
+Missing character: There is no ù in font ptmr7t!
+LaTeX Font Info:    Try loading font information for U+msa on input line 31.
+ (/usr/share/texlive/texmf-dist/tex/latex/amsfonts/umsa.fd
+File: umsa.fd 2013/01/14 v3.01 AMS symbols A
+)
+LaTeX Font Info:    Try loading font information for U+msb on input line 31.
+
+(/usr/share/texlive/texmf-dist/tex/latex/amsfonts/umsb.fd
+File: umsb.fd 2013/01/14 v3.01 AMS symbols B
+) [3]
+Underfull \hbox (badness 1430) in paragraph at lines 71--72
+[]\OT1/ptm/m/n/10 There are pow-er-ful static anal-y-sers avail-able such as
+ []
+
+<Sets-involved.png, id=21, 500.87125pt x 261.97874pt>
+File: Sets-involved.png Graphic file (type png)
+<use Sets-involved.png>
+Package pdftex.def Info: Sets-involved.png  used on input line 103.
+(pdftex.def)             Requested size: 176.39923pt x 92.26556pt.
+Missing character: There is no ‚ in font ptmr7t!
+Missing character: There is no Ü in font ptmr7t!
+Missing character: There is no í in font ptmr7t!
+Missing character: There is no ‚ in font ptmr7t!
+Missing character: There is no à in font ptmr7t!
+Missing character: There is no ó in font ptmr7t!
+! Text line contains an invalid character.
+l.115 $\theta$2 and k1 ^^P
+                          ‚àó
+A funny symbol that I can't read has just been input.
+Continue, and I'll forget that it ever happened.
+
+Missing character: There is no ‚ in font ptmr7t!
+Missing character: There is no à in font ptmr7t!
+Missing character: There is no ó in font ptmr7t!
+Missing character: There is no Œ in font ptmr7t!
+Missing character: There is no ∏ in font ptmr7t!
+Missing character: There is no ‚ in font ptmr7t!
+Missing character: There is no á in font ptmr7t!
+Missing character: There is no í in font ptmr7t!
+Missing character: There is no Œ in font ptmr7t!
+Missing character: There is no ∏ in font ptmr7t!
+) (./methodology2.tex
+<provenance-capture.png, id=22, 541.02126pt x 639.38875pt>
+File: provenance-capture.png Graphic file (type png)
+<use provenance-capture.png>
+Package pdftex.def Info: provenance-capture.png  used on input line 3.
+(pdftex.def)             Requested size: 176.39923pt x 208.47206pt.
+) (./results.tex [4 <./camflow.png> <./LSM-hook.png> <./Sets-involved.png>]) (.
+/limitations.tex) (./relatedwork.tex) (./conclusion.tex)
+(./discussion.tex)
 Missing character: There is no ‚ in font ptmr7t!
 Missing character: There is no Ä in font ptmr7t!
 Missing character: There is no ô in font ptmr7t!
@@ -478,8 +543,8 @@ Missing character: There is no ì in font ptmr7t!
 Missing character: There is no ‚ in font ptmr7t!
 Missing character: There is no Ä in font ptmr7t!
 Missing character: There is no ì in font ptmr7t!
- [3]
-Underfull \hbox (badness 10000) in paragraph at lines 231--233
+
+Underfull \hbox (badness 10000) in paragraph at lines 234--236
 []\OT1/ptm/m/n/8 PASQUIER, T. , ``Cam-Flow de-vel-op-ment. In
  []
 
@@ -494,25 +559,45 @@ Missing character: There is no Ä in font ptmr7t!
 Missing character: There is no ô in font ptmr7t!
 Missing character: There is no √ in font ptmr7t!
 Missing character: There is no ≠ in font ptmr7t!
-[4
+Missing character: There is no ‚ in font ptmr7t!
+Missing character: There is no Ä in font ptmr7t!
+Missing character: There is no ú in font ptmr7t!
+Missing character: There is no ‚ in font ptmr7t!
+Missing character: There is no Ä in font ptmr7t!
+Missing character: There is no ù in font ptmr7t!
 
- <./camflow.png>] (./Mid-term_Proposal.aux) ) 
+Underfull \hbox (badness 2042) in paragraph at lines 275--278
+[]\OT1/ptm/m/n/8 23 R. M. Stall-man and the GCC de-vel-oper com-mu-nity, Us-ing
+
+ []
+
+Missing character: There is no ‚ in font ptmr7t!
+Missing character: There is no Ä in font ptmr7t!
+Missing character: There is no ú in font ptmr7t!
+Missing character: There is no ‚ in font ptmr7t!
+Missing character: There is no Ä in font ptmr7t!
+Missing character: There is no ù in font ptmr7t!
+[5 <./provenance-capture.png>] (./Mid-term_Proposal.aux) ) 
 Here is how much of TeX's memory you used:
- 4355 strings out of 492982
- 63413 string characters out of 6134896
- 132939 words of memory out of 5000000
- 7851 multiletter control sequences out of 15000+600000
- 34125 words of font info for 63 fonts, out of 8000000 for 9000
+ 4425 strings out of 492982
+ 64496 string characters out of 6134896
+ 131963 words of memory out of 5000000
+ 7894 multiletter control sequences out of 15000+600000
+ 40648 words of font info for 85 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
- 41i,6n,35p,920b,262s stack positions out of 5000i,500n,10000p,200000b,80000s
-{/usr/share/texlive/texmf-dist/fon
-ts/enc/dvips/base/8r.enc}</usr/share/texlive/texmf-dist/fonts/type1/urw/times/u
-tmb8a.pfb></usr/share/texlive/texmf-dist/fonts/type1/urw/times/utmr8a.pfb></usr
-/share/texlive/texmf-dist/fonts/type1/urw/times/utmri8a.pfb>
-Output written on Mid-term_Proposal.pdf (4 pages, 229357 bytes).
+ 41i,8n,35p,920b,228s stack positions out of 5000i,500n,10000p,200000b,80000s
+{/usr/share/texlive/t
+exmf-dist/fonts/enc/dvips/base/8r.enc}</usr/share/texlive/texmf-dist/fonts/type
+1/public/amsfonts/cm/cmmi10.pfb></usr/share/texlive/texmf-dist/fonts/type1/publ
+ic/amsfonts/cm/cmmi7.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsf
+onts/cm/cmr7.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/
+cmsy10.pfb></usr/share/texlive/texmf-dist/fonts/type1/urw/times/utmb8a.pfb></us
+r/share/texlive/texmf-dist/fonts/type1/urw/times/utmr8a.pfb></usr/share/texlive
+/texmf-dist/fonts/type1/urw/times/utmri8a.pfb>
+Output written on Mid-term_Proposal.pdf (5 pages, 384022 bytes).
 PDF statistics:
- 36 PDF objects out of 1000 (max. 8388607)
- 21 compressed objects within 1 object stream
+ 60 PDF objects out of 1000 (max. 8388607)
+ 35 compressed objects within 1 object stream
  0 named destinations out of 1000 (max. 500000)
- 16 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 31 words of extra memory for PDF output out of 10000 (max. 10000000)
 
