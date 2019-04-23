@@ -1,10 +1,36 @@
 What is the purpose of the paper?
 
--The paper is a combination of a lot of seperate established area. It's trying to answer two critical questions. It's trying to understand if the current LSMs interface are capable enough to capture all the security related flows/ 
+The paper is trying to answer the question if using LSMs for Camflow is justified. If it is, does Camflow do a good job utilizing it.
+
+
 What is the hypothesis that the authors are testing?
+
+The authors are testing two hypothesis, if the LSM interface is capable enough to capture all information flows. The second hypothesis is that if it is so indeed, then Camflow, which makes use of the LSM interface
+to construct an intrusion detection system, shows the attacks on the provenance graphs being constructed by Camflow. 
+
 What is the experimental setup?
+
+-> The experimental setup consists of the INRIA toolset, which is used for manually analysing the kernel code base and performing static analysis and constructing the graphs. For the second half, the authors
+use Camflow and in different scenarios, try to find if the attacks show up on the provenance graphs.
 What is good/bad about the experimental setup?
+
+-> I feel for the second half, they could have created some automatic means of attempting different categories of attacks to see if they show up. A few more examples would have been really interesting. 
 How well was the research carried out? What results are presented?
+
+-> I think there is a lot of scope for improvement in the research. Doing the analysis for every system call (400+) will definitely strengthen the results. It's definitely a lot more effort, but 
+the gaurantees will be really good to look at. 
+
 Do you believe the results? Why/Why not?
+
+-> The authors have mentioned that they analyse sepecific system calls to check for information flows. It seems quite believable. Also, since they are using the toolsets developed by previous authors. 
+The previous worked also performed this analysis on the subset of system calls in the kernel version 4.13. These authors compare the differences between that version and this version and see the difference. 
 What things might you have done differently?
+
+-> I would have paid a little more attention to the second part of the paper, which worked with Camflow and the graph. I think that should be a seperate work altogether. Constructing a formalism is very
+difficult unless you know the entire system. Here the authors try to construct formalism for two systems which seems a little too ambitious to me. Hence I feel putting out two seperate papers would have
+been a better way to present their work. 
+
 What lessons did you learn from reading this paper critically?
+
+-> It's a little incomplete for a person trying to read it for the first time. There are a lot of gaps for a person not familiar with linux kernel code-base. But the big question here that arises is
+how do you explain all that in 10 pages?

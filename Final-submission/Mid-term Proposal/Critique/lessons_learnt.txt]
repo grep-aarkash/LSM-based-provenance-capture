@@ -18,5 +18,16 @@ up and starting from scratch.
 
 6. You don't have to follow a standard heading pattern of introduction, background etc. What I mean to say is that you don't need to put a seperate background section. We can construct it as we are preparing our story. 
 
-7. Writing horizontal is what makes a bad paper. In my previous attempt, after reading the comments, I realized that my readers were unable to understand what Camflow is. Everyone had their own viewpoint as to how it must be operating. This is what made everything very vague and nonsense.
+7. Writing horizontall is what makes a bad paper. In my previous attempt, after reading the comments, I realized that my readers were unable to understand what Camflow is. Everyone had their own viewpoint as to how it must be operating. This is what made things a little vague.
+
+8. The scope of the project was too huge according to me. In order to perform
+static analysis, it's important to know how the system works. Blindly using tools
+is not very helpful. In case of dynamic analysis, it's a different case. Using
+static analysersm, it's very important to understand the code flow. In this case
+it was the linux kernel.
+
+9. Linux kernel is huge. It took me around 7 whole days to get familiar with
+the code base and understand what goes where. 
+
+10. 
 
