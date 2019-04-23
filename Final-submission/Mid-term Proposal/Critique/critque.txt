@@ -14,7 +14,10 @@ What is the experimental setup?
 use Camflow and in different scenarios, try to find if the attacks show up on the provenance graphs.
 What is good/bad about the experimental setup?
 
--> I feel for the second half, they could have created some automatic means of attempting different categories of attacks to see if they show up. A few more examples would have been really interesting. 
+-> I feel for the second half, they could have created some automatic means of attempting different categories of attacks to see if they show up. A few more examples would have been really interesting. I would
+have liked to see a few more attacks on the kernel and see if it indeed does show up on the graph. I would have also liked to see how is Camflow different from Blare or other capture tools which also 
+utilize LSMs.
+
 How well was the research carried out? What results are presented?
 
 -> I think there is a lot of scope for improvement in the research. Doing the analysis for every system call (400+) will definitely strengthen the results. It's definitely a lot more effort, but 
@@ -24,7 +27,8 @@ Do you believe the results? Why/Why not?
 
 -> The authors have mentioned that they analyse sepecific system calls to check for information flows. It seems quite believable. Also, since they are using the toolsets developed by previous authors. 
 The previous worked also performed this analysis on the subset of system calls in the kernel version 4.13. These authors compare the differences between that version and this version and see the difference. 
-What things might you have done differently?
+What things might you have done differently? The interesting part I noticed here is that Hauser did a similar analysis for kernel version 3.2. Georget built upon it and create fully automated tools and showed
+that the tools work for version 4.3 and this author utilized the tools by Georget to perform similar analysis for version 4.20. I wonder whats next for version 5.x.
 
 -> I would have paid a little more attention to the second part of the paper, which worked with Camflow and the graph. I think that should be a seperate work altogether. Constructing a formalism is very
 difficult unless you know the entire system. Here the authors try to construct formalism for two systems which seems a little too ambitious to me. Hence I feel putting out two seperate papers would have
@@ -32,5 +36,10 @@ been a better way to present their work.
 
 What lessons did you learn from reading this paper critically?
 
--> It's a little incomplete for a person trying to read it for the first time. There are a lot of gaps for a person not familiar with linux kernel code-base. But the big question here that arises is
-how do you explain all that in 10 pages?
+-> I think there are a few formatting issues.
+-> The paper tries to be self sufficient for a person not too aware about the linux kernel, but I feel there could be a couple of things which could be explained a little more in detail.
+-> The linux security modules are pretty interesting and using them will definitely help in making intrusion detection systems for kernel really strong.
+-> Since LSMs are kept general to the kernel, even mobile phones (Taintdroid) can utilize it.
+-> Static analysis vs dynamic analysis- which to really chose?
+-> Despite the kernel being so old, despite having so many static analyzers, it's interesting how the new one still fits. When will it really end?
+-> In verification techniques finitization will always remain an important characteristic. 

@@ -8,11 +8,13 @@ a lot.
 2. Things operate very differently when working as a part of a huge established
 project as compared to my thesis research work which I am building from ground
 up and starting from scratch.
-	1. The project expected me to do one simple task, which was running call	graphs. After discussing with other students, I constantly kept shifting 	my goal. Again, I feel this is my fault. I should have focused on A and 	B instead of trying to do C, D, E or F. 
+	 
 	
-3. During writing the paper, I wanted to be 'completely original'. Hence, instead of explaining the architecture in the beginning in the entire paper I keep trying to show why this work is different without giving any motivaion or background. 
+3. During writing the paper, I wanted to be 'completely original'. Hence, instead of explaining the architecture in the beginning in the entire paper I keep trying to show why this work is 
+different without giving the context of previous work. I read all the literature, my readers had not read it.
 
-4. Again with respect to writing, I did spend a lot of time on the first draft. But I spent my time on the wrong part. Instead of building one prototype and iteratively improving upon it. I spent too much time planning in my head. 
+4. Again with respect to writing, I did spend a lot of time on the first draft. But I spent my time on the wrong part. Instead of building one prototype and iteratively improving upon it. 
+I spent too much time planning in my head. 
 
 5. Before writing, prepare an outline. The outline will most probably change after the final draft. But it helps you start.
 
@@ -29,5 +31,14 @@ it was the linux kernel.
 9. Linux kernel is huge. It took me around 7 whole days to get familiar with
 the code base and understand what goes where. 
 
-10. 
+10. I realize that building everything from scratch is one aspect. The other aspect is the concept of software glueing. Information is all out there, but using it in the correct context is important. For eg,
+proving all flows are being captured by LSM is not only useful for Camflow but for all the IDS in mobile phones or otherwise using LSMs for their policies like Taintdroid etc. Point is in the work it's important
+to distinguish our work even though it might have been done before, the correct glueing aspect makes it novel. 
+
+11. After completing the writing of this paper, a lot of things have changed. There can never really be a perfect paper. The more I read it, the more changes I want to make. It never ends.
+
+12. I think after doing this work novelty and research are not directly propotional. According to me, before this, for my research I 've always wanted to do something different. Something which no one has done.
+But this project was a lot of hardwork with very little results. I am a little unsure about what research is right now. Is it so much work for little results.
+
+13. 
 
