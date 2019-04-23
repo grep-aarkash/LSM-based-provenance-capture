@@ -1,4 +1,14 @@
 \section{Related Work}
-There are many types of tools dedicated to the analysis of the kernel. The most basic method in order to find errors faster, is to look for reasons in the code known to be symptomatic of certain classes of problems. For example, to detect the omission of a deallocating memory in a function or a direct comparison between a
-pointer and an integer. In response to this problem has been
-developed Ladybug [ 28]. MECA [ 29 ] and CQUAL [ 30 ] are other tools which were developed for performing the static analysis of the kernel.
+There are many types of tools dedicated to the analysis of the kernel. The most basic method in order to find errors faster, is to look for reasons in the code known to be symptomatic of certain classes of problems in the kernel.
+\subsection{Information flow control systems}
+Previous work on information flow control enforcement at the OS level, such as HiStar [41],
+Flume [42], and Weir [43], uses labels to define security and integrity contexts that constrain information flows between kernel
+objects. Labels map to kernel objects, and a process requires decentralised management capabilities to modify its labels. Point-topoint access control decisions are made to evaluate the validity
+of an information flow. Through transitivity, it is possible to express constraints on a workflow (e.g., collected user information
+can only be shared with third parties as an aggregate). SELinux [44]
+provides a similar information flow control mechanism but without decentralised management. A typical way of representing and
+thinking about information flow in a system is through a directed
+graph. However, current object labelling abstractions do not take
+advantage of this representation, and it is difficult to reason about
+when defining policies. CamQuery differs from these systems in that it allows the implementation of such mechanisms directly on the
+graph abstraction.

@@ -75,8 +75,26 @@ The original goal is to eventually make sure that any actions made by a process 
 \vskip 0.1in
 \subsubsection{Property 2}\textit{(Whole system provenance)}
 \vskip 0.1in
-Iff the Property 1 holds, which means that all information flows pass through the LSM hooks, then CamFlow captures all the data. 
+\textit{Iff the Property 1 holds, which means that all information flows pass through the LSM hooks, then CamFlow captures all the data.} 
 
-\subsubsection{Theorem 1}\textit{Transitivity}
+\subsubsection{Theorem 3}\textit{Transitivity}
 \vskip 0.1in
-If an implementation $\Gamma_1$ adapted for LSM  captures information $\gamma$ and another implementation $\Gamma_2$ is a superset of $\Gamma_1$ then $\Gamma_2$ captures the information $\gamma$
+\textit{If an implementation $\Gamma_1$ adapted for LSM  captures information $\gamma$ and another implementation $\Gamma_2$ is a superset of $\Gamma_1$ then $\Gamma_2$ captures the information $\gamma$.}
+\vskip 0.2in
+In other words this theorem says that if in SELinux all information flows pass through LSM hooks, which holds if the Property 1 holds. Then, since CamFlow is a direct stackable module on top of all existing modules, it will capture all the flows which SELinux will. The next Theorem 4 is a followup which is comes after the Theorem 3.
+
+\subsubsection{Theorem 4}\textit{Module over multiple implementations}
+\vskip 0.1in
+\textit{If a set of implementations $\Gamma_1$ $\Gamma_2$ $\Gamma_3$ ... $\Gamma_n$ are adapted for LSM  captures information $\gamma_1$, $\gamma_2$ .. $\gamma_n$ and another implementation $\Gamma_F$ is a superset of $\Gamma_1$, $\Gamma_2$ $\Gamma_3$ ... $\Gamma_n$  then $\Gamma_F$ captures the information $\gamma_1$, $\gamma_2$ .. $\gamma_n$.}
+\vskip 0.2in
+
+This theoretically shows that if LSM interface makes sure all flows pass through LSM hooks, then CamFlow indeed does capture all the data. The second part to this formalism would be the property 3.
+
+\subsubsection{Property 3} \textit{Provenance Graphs}
+\vskip 0.1in
+\textit{According to this property if Property 2 holds, and CamFlow captures all the data successfully, then the graph reflects the relations and the properties. }
+
+We can use  theorems similar to Theorem 3 and 4 to verify the property 3. 
+
+
+

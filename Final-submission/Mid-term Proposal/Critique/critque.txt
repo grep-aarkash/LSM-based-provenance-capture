@@ -1,6 +1,7 @@
 What is the purpose of the paper?
 
-The paper is trying to answer the question if using LSMs for Camflow is justified. If it is, does Camflow do a good job utilizing it.
+The paper is trying to answer the question if using LSMs for Camflow is justified. If it is, does Camflow do a good job utilizing it. Another aspect, the paper seems to be exploring is the static analysis
+of the kernel. Though the authors don't talk about it directly, it's interesting to see despite so many existing tools another static analyser for the kernel pops up. 
 
 
 What is the hypothesis that the authors are testing?
@@ -30,13 +31,13 @@ The previous worked also performed this analysis on the subset of system calls i
 What things might you have done differently? The interesting part I noticed here is that Hauser did a similar analysis for kernel version 3.2. Georget built upon it and create fully automated tools and showed
 that the tools work for version 4.3 and this author utilized the tools by Georget to perform similar analysis for version 4.20. I wonder whats next for version 5.x.
 
--> I would have paid a little more attention to the second part of the paper, which worked with Camflow and the graph. I think that should be a seperate work altogether. Constructing a formalism is very
-difficult unless you know the entire system. Here the authors try to construct formalism for two systems which seems a little too ambitious to me. Hence I feel putting out two seperate papers would have
-been a better way to present their work. 
+-> I would have paid a little more attention to the second part of the paper, which worked with Camflow and the graph. I think that should be a seperate work altogether. Constructing a formalism like the authors
+attempt to do is one part. Then using some techniques such as static analysis, or symbolic verification to show it is also important. The authors seemed to have missed that.
 
 What lessons did you learn from reading this paper critically?
 
 -> I think there are a few formatting issues.
+-> The need of gluing things together. It's not always required to create new stuff. 
 -> The paper tries to be self sufficient for a person not too aware about the linux kernel, but I feel there could be a couple of things which could be explained a little more in detail.
 -> The linux security modules are pretty interesting and using them will definitely help in making intrusion detection systems for kernel really strong.
 -> Since LSMs are kept general to the kernel, even mobile phones (Taintdroid) can utilize it.

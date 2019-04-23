@@ -1,24 +1,11 @@
-\section{Discussion}
-The first interesting discussion point is under-
-standing the completeness-security gap if any. Cur-
-rently, the DAGs are generated with respect to the
-provenance data. However, this is not taking the
-timing aspect into consideration. Provenance cap-
-ture mechanisms currently are data related. The way
-we can capture anomalies is by learning the data
-pattern from previous immutable data. However, if
-the attacker brings in the timing aspect, keeping the
-data intact can that cause damage? It depends on
-the application if data delays can cause harm.
-Another interesting point to discuss would be the
-completeness of information flows means that it
-guarantees that all flows are being captured. So
-you need to place hooks at the relevant places
-which ensures that all information flow paths are
-being recorded. However, again this does not cover
-the event aspect of the system. What if instead of
-modifying the data with alone or modifying the data
-with respect to time, it modifies the event in a smart
-way such that the correlations created by the DAG
-cannot spot it. Instead of sending the data from
-process P to process Q, it sends it to process R.
+\section{Future work}
+The next step would be doing a similar analysis for the kernel version 5.x. Automating the technique to utilize the tools for the newer kernel version should be done. Georget et al.[3] provided a set of tools which when used, help in visualizing information flows, performing static analysis and finally getting to the results if any LSM hooks are missing. If we can automate this process for the future kernel versions, it will be a great contribution. 
+\vskip 0.1in
+Another contribution can be analysing the different IDS utilizing LSMs in different forms such as Blare, Weir, Laminar and understanding how and why they differ if they are utilizing the same underlying mechanisms. Is it just about the implementation or is there more to offer?
+\vskip 0.1in
+If indeed every action we perform shows up in a provenance graph, we can use that information to recreate information. I do mention this in the paper, however, proceeding in that direction sounds interesting. 
+\vskip 0.1in
+Another challenge would be to consider covert channels during the analysis.
+\vskip 0.1in
+I think health care could benefit a lot from such approaches. If we can have such concept in inside the human body, which creates a provenance of everything the body consumed. This is probably fiction for now, but maybe someday.
+

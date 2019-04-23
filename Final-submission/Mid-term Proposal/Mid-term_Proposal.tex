@@ -34,13 +34,12 @@ kaarti.sr@gmail.com}
     
      \vskip 0.2in
 	 \textbf{Data provenance describes how data came to be in its present form. It includes data sources and the transformations that have been applied to them. There have been several different OS provenance capture tools in the past. However, only CamFlow and its predecessor Linux Provenance Modules use Linux Security Modules that is a  framework that allows the Linux kernel to support a variety of computer security models while avoiding favouritism toward any single security implementation. This paper examines the relationship between LSM and Camflow. The two key research questions that are addressed: 1) Does
-	 the last stable version of Linux kernel(v4.20) capture all information flows? 2) Given the results of (1) and the data captured by a whole-system provenance capture mechanism utilizing LSM hooks, can we prove that an intrusion will be reflected as an anomaly in the provenance graphs. The part 1 of our work focuses on ensuring that every information flow  in v4.2 goes through a LSM hook. This is an important question that helps in validating the use of kernel provenance for intrusion detection. }
+	 the last stable version of Linux kernel(v4.20) capture all information flows? 2) Given the results of (1) and the data captured by a whole-system provenance capture mechanism utilizing LSM hooks, can we prove that an intrusion will be reflected as an anomaly in the provenance graphs. The part 1 of our work focuses on ensuring that every information flow  in v4.2 goes through a LSM hook. This is an important question that helps in validating the use of kernel provenance for intrusion detection. We found two system calls which have flows that don't pass through the LSM hooks. }
 
 \input{introduction}
 \input{background}
 \input{methodology}
 \input{methodology2}
-\input{results}
 \input{limitations}
 \input{relatedwork}
 \input{conclusion}
@@ -343,6 +342,19 @@ Data Management, Aug. 2009
 Control Model. In Proceedings of the 10th Annual International
 Conference on Privacy, Security and Trust (PST), pages 137–144,
 2012.
+
+41. Nickolai Zeldovich, Silas Boyd-Wickizer, Eddie Kohler, and David Mazières.
+2006. Making information flow explicit in HiStar. In Symposium on Operating
+Systems Design and Implementation (OSDI’06). USENIX Association, 263–278.
+
+42 Maxwell Krohn, Alexander Yip, Micah Brodsky, Natan Cliffer, M Frans Kaashoek,
+Eddie Kohler, and Robert Morris. 2007. Information flow control for standard OS
+abstractions. In ACM SIGOPS Operating Systems Review, Vol. 41. ACM, 321–334
+
+43 Adwait Nadkarni, Benjamin Andow, William Enck, and Somesh Jha. 2016. Practical DIFC enforcement on Android. In USENIX Security Symposium. 1119–1136
+
+44 Stephen Smalley, Chris Vance, and Wayne Salamon. 2001. Implementing SELinux
+as a Linux security module. NAI Labs Report 1, 43 (2001), 139.
 \end{thebibliography}
 
 
