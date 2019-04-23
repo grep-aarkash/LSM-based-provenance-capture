@@ -1,1 +1,24 @@
 \section{Discussion}
+The first interesting discussion point is under-
+standing the completeness-security gap if any. Cur-
+rently, the DAGs are generated with respect to the
+provenance data. However, this is not taking the
+timing aspect into consideration. Provenance cap-
+ture mechanisms currently are data related. The way
+we can capture anomalies is by learning the data
+pattern from previous immutable data. However, if
+the attacker brings in the timing aspect, keeping the
+data intact can that cause damage? It depends on
+the application if data delays can cause harm.
+Another interesting point to discuss would be the
+completeness of information flows means that it
+guarantees that all flows are being captured. So
+you need to place hooks at the relevant places
+which ensures that all information flow paths are
+being recorded. However, again this does not cover
+the event aspect of the system. What if instead of
+modifying the data with alone or modifying the data
+with respect to time, it modifies the event in a smart
+way such that the correlations created by the DAG
+cannot spot it. Instead of sending the data from
+process P to process Q, it sends it to process R.

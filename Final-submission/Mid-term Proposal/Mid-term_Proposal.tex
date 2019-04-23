@@ -29,12 +29,12 @@ kaarti.sr@gmail.com}
 }
 
 \maketitle
- \textit{“A process cannot be understood by stopping it. Understanding must move with the flow of the process, must join it and flow with it.”} 
+ \textit{“A process cannot be understood by stopping it. Understanding must move with the flow of the process, must join it and flow with it.” } - Frank Herbert
 \section*{Abstract}
     
      \vskip 0.2in
-	 \textbf{Data provenance describes how data came to be in its present form. It includes data sources and the transformations that have been applied to them. There have been several different OS provenance capture tools in the past. However, only CamFlow and its predecessor Linux Provenance Modules use Linux Security Modules which is a  framework  that allows the Linux kernel to support a variety of computer security models while avoiding favouritism toward any single security implementation. This paper examines the relationship between LSM and CamFlow. the two key research questions that are addressed: 1) Does
-	 the latest version of Linux LSM capture all security related information flows? 2) Given the results of (1) and the data captured by CamFlow in its LSM hooks, can we prove that an intrusion will be reflected as a different in the provenance graphs. This is an important question that either validates or refutes the use of kernel provenance for intrusion detection.}
+	 \textbf{Data provenance describes how data came to be in its present form. It includes data sources and the transformations that have been applied to them. There have been several different OS provenance capture tools in the past. However, only CamFlow and its predecessor Linux Provenance Modules use Linux Security Modules that is a  framework that allows the Linux kernel to support a variety of computer security models while avoiding favouritism toward any single security implementation. This paper examines the relationship between LSM and Camflow. The two key research questions that are addressed: 1) Does
+	 the last stable version of Linux kernel(v4.20) capture all information flows? 2) Given the results of (1) and the data captured by a whole-system provenance capture mechanism utilizing LSM hooks, can we prove that an intrusion will be reflected as an anomaly in the provenance graphs. The part 1 of our work focuses on ensuring that every information flow  in v4.2 goes through a LSM hook. This is an important question that helps in validating the use of kernel provenance for intrusion detection. }
 
 \input{introduction}
 \input{background}
@@ -280,6 +280,69 @@ https://gcc.gnu.org/onlinedocs/gcc-4.8.4/gcc/
 model checker Blast,” International Journal on Software Tools for
 Technology Transfer, vol. 9, no. 5, 2007.
 
+25 WireX Communications. Linux Security Module. http://
+lsm.immunix.org/, April 2001.
+
+26 Stephen Smalley, Timothy Fraser, and Chris Vance. Linux Security Modules: General Security Hooks for Linux. http:
+//lsm.immunix.org/, September 2001.
+
+27 Neil Brown. Sparse : a look under the hood. Linux Weekly News. 8 juin 2016.
+url : https://lwn.net/Articles/689907/ (visité le 01/02/2017) (cf. p. 29).
+
+28 Yoann Padioleau, Julia L. Lawall, René Rydhof Hansen et Gilles Muller.
+« Documenting and Automating Collateral Evolutions in Linux Device Dri-
+vers ». In : European Conference on Computer Systems (EuroSys 2008). Glas-
+gow, Scotland : ACM, avr. 2008, p. 247–260 (cf. p. 29).
+
+29 Junfeng Yang, Ted Kremenek, Yichen Xie et Dawson Engler. « MECA : an
+extensible, expressive system and language for statically checking security
+properties ». In : ACM conference on Computer and Communications Security
+(CCS 2003). Washington D.C., USA : ACM, oct. 2003, p. 321–334 (cf. p. 29).
+
+30Jeffrey Scott Foster. « Type qualifiers : lightweight specifications to improve
+software quality ». Thèse de doct. Berkeley, CA, USA : University of California
+at Berkeley, 2002 (cf. p. 29).
+
+31 http://kayrebt.gforge.inria.fr/
+
+32 Christophe Hauser. « Détection d’intrusion dans les systèmes distribués par
+propagation de teinte au niveau noyau ». Doctoral thesis. Rennes, France :
+University of Rennes 1, juin 2013
+
+33 ] K. Muniswamy-Reddy, D. A. Holland, U. Braun, and M. Seltzer.
+Provenance-Aware Storage Systems. In Proceedings of the 2006
+USENIX Annual Technical Conference, 2006.
+
+34 J. Seibert, G. Baah, J. Diewald, and R. Cunningham. Using
+Provenance To Expedite MAC Policies (UPTEMPO) (Previously
+Known as IPDAM). Technical Report USTC-PM-015, MIT Lincoln Laboratory, October 2014.
+
+35 A. Bates, K. Butler, A. Haeberlen, M. Sherr, and W. Zhou. Let
+SDN Be Your Eyes: Secure Forensics in Data Center Networks.
+In NDSS Workshop on Security of Emerging Network Technologies, SENT, Feb. 2014.
+
+36 A. Gehani, B. Baig, S. Mahmood, D. Tariq, and F. Zaffar. Finegrained Tracking of Grid Infections. In Proceedings of the
+11th IEEE/ACM International Conference on Grid Computing,
+GRID’10, Oct 2010.
+
+37 D. Tariq, B. Baig, A. Gehani, S. Mahmood, R. Tahir, A. Aqil, and
+F. Zaffar. Identifying the Provenance of Correlated Anomalies. In
+Proceedings of the 2011 ACM Symposium on Applied Computing,
+SAC ’11, Mar. 2011.
+
+38 D. Nguyen, J. Park, and R. Sandhu. Dependency Path Patterns
+As the Foundation of Access Control in Provenance-aware Systems. In Proceedings of the 4th USENIX Conference on Theory
+and Practice of Provenance, TaPP’12, pages 4–4, Berkeley, CA,
+USA, 2012. USENIX Association.
+
+39 ] Q. Ni, S. Xu, E. Bertino, R. Sandhu, and W. Han. An Access
+Control Language for a General Provenance Model. In Secure
+Data Management, Aug. 2009
+
+40 J. Park, D. Nguyen, and R. Sandhu. A Provenance-Based Access
+Control Model. In Proceedings of the 10th Annual International
+Conference on Privacy, Security and Trust (PST), pages 137–144,
+2012.
 \end{thebibliography}
 
 

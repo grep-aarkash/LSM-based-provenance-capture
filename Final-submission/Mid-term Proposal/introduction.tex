@@ -1,41 +1,49 @@
 \section{Introduction}
+
+
+
 \label{What is provenance im general and with respect to computing?}
 
-Provenance is the chronology of ownership, custody or location of a historical object. These documents are used to guide the authenticity and quality of an item. The term is used in a wide range of fields including science and computing. In computing...
+A provenance-aware system automatically gathers and
+reports metadata that describes the history of each object being processed on the system. This allows users to
+track, and understand, how a piece of data came to exist in its current state. The application of provenance
+is presently of enormous interest in a variety of disparate communities including scientific data processing,
+databases, software development, and storage [33, 34].
+Provenance has also been demonstrated to be of great
+value to security by identifying malicious activity in data
+centers [35, 36, 37], improving Mandatory Access
+Control (MAC) labels [38,39,40], and assuring regulatory compliance [3].
 \vskip 0.1in
 
 
 
-Data provenance can help detect such intrusions in the kernel. Data provenance only provides with the capability to detect intrusions not prevent them. However, in order to make sure that all the intrusions are getting detected, we need a way to capture the complete data flow in the system which is why we chose to work with Camflow. 
+Data provenance can help detect such intrusions in the kernel. It only provides with the capability to detect intrusions not prevent them. However, in order to make sure that all the intrusions are getting detected, we need a way to capture the complete data flow in the system which is why we chose to work with Camflow. Camflow is a practical implementation of whole-system provenance capture that can be easily maintained and deployed. They use Linux security modules and Netfilter hooks as the underlying framework to capture the data flows which provides us the ability to capture all the information flows. This ability to capture all information flows in a system is defined as whole-system provenance capture. 
 \vskip 0.1in
-\label{Camflow and whole system provenance and LSMs}
-
-Camflow is a practical implementation of whole-system provenance capture that can be easily maintained and deployed. They use Linux security modules as the underlying framework to capture the data flows which provides us the ability to...
-
 
 \label{What are we doing?}
-In this paper, we examine if the whole system provenance capture mechanism developed by Camflow can be utilized for intrusion detection. 
-
+In this paper, we examine if the whole system provenance capture mechanism developed by Camflow can be utilized for intrusion detection. Camflow uses exisiting capture techniques provided by the functionalities of Linux operating systems. The work we have undertaken focuses on information security, and more specifically on the two security properties which should hold throughout the system. 
 \vskip 0.1in
-\label{Applications of data provenance}
-
-Data provenance has wide range of applications ranging from dependibility ( reliability and security) of the system to reproducibility of computational experiments.
+\begin{enumerate}
+	\item  Confidentiality: Only authorized users should have access to the information. In order to make sure that only authorized users have access to certain files in the Linux operating system, a general lightweight access control framework was developed. This was the Linux security modules(LSM) project(25,26). A number of existing acess control implementations including SELinux(27) were adapted to use LSMs.
+	\vskip 0.1in
+	\item Integrity The information stored in the system should not undergo any change. The crash of a PhD thesis in progress in word without any data recovery or the unauthorized creation of a user account in service by a hacker are some examples of intolerable corruptions. 
+\end{enumerate}
 \vskip 0.1in
+In order to meet the needs of confidentiality and integrity, system administrators assign number of security policies. Hence, each user permissions and object of the system contains an information security level which limits the access. Object in this case is defined as the abstraction of the system which may contain information. 
+
+%\vskip 0.1in
+%\label{Applications of data provenance}
+%
+%Data provenance has wide range of applications ranging from dependability ( reliability and security) of the system to reproducibility of computational experiments.
+%\vskip 0.1in
 \label{Role of data povenance in security}
 
 Security is a major concern since there is no permanent fix to detect intrusions. Its a race between attackers and defenders.
-An example to show that the kernel is still under threat Xioo et al (22) showed that attackers are able to manipulate the running behaviours of operating systems without injecting any malicious code. This type of an attack is called as kernel data attack. With the power of tampering data, the attackers can stealthily subvert various kernel security mechanisms. The 
+An example to show that the kernel is still under threat Xioo et al.[22] showed that attackers are able to manipulate the running behaviours of operating systems without injecting any malicious code. This type of an attack is called as kernel data attack. With the power of tampering data, the attackers can stealthily subvert various kernel security mechanisms. These policies express security needs. Hence the first part of our work focuses on one of these mechanisms: monitoring information flow to ensure that the integrity property holds. 
 \vskip 0.1in
 \label{Challenge 1}
 
-We first focus on a methodology proposed by Georget et al. to verify if indeed every security related flow goes through an LSM hook. The methodology proposed by Georget et al. had been designed for linux kernel v4.3 to ensure that all security flows are passing through the hooks. We gaurantee the same for v4.20 which is the last formal release. 
-\vskip 0.1in
-\label{Challenge 2}
-
-A second challenge in determining if the use of kernel provenance can help in intrusion detection, we prove that a security breach is reflected in the provenance graph it produces. 
+We first focus on a methodology proposed by Georget et al.[3] to verify if indeed every security related flow goes through an LSM hook. The methodology proposed by Georget et al. had been designed for linux kernel v4.3 to ensure that all security flows are passing through the hooks. We guarantee the same for v4.20 which is the last formal release. The tools developed by Georget et al.[3], however, can be utilized for performing static analysis with any kernel version. A second challenge in determining if the use of kernel provenance can help in intrusion detection, we prove that a security breach is reflected in the provenance graph it produces. 
 \vskip 0.1in
 
-\textbf{Key contributions}
-
-The key contributions of our work include: 1) analysing the callgraphs obtained from static analysis of the linux kernel to see if all paths are being tracked 2) a formalism to automate the process of analysing the callgraphs for the future versions 3)prove or disprove if indeed  
-
+The key contributions of our work include: 1) ensuring if all information flows pass through the Linux security modules hooks. This work focuses on understanding if the placement of hooks is correct. 2) if Camflow uses the LSM and Netfilter hooks to capture the data, in case of intrusions the provenance graph is able to capture it. 

@@ -43,9 +43,10 @@ In order to explain how a LSM hook works, we show an example in Fig 4. We take s
 
 
 \section{Modelling the system calls causing flows}
+Analysis of programs aims verification of certain properties expected of them. Conventionally, there are two categories of anlysis, dynamic analysis and static analysis. Static analysis checks the properties on the souce code of the program, according to the declared semantics of the programming language, without the need to compile the program into machine language. 
 The analysis proposed relies on the C compiler from the
 Gnu Compilers Collection [23], used to compile the Linux
-kernel
+kernel.
 
 \subsection{Control flow graphs}
 The analysis technique we use if has been proposed by Georget et al. () for a subset of the system calls. It's a four step methodology which relies on the C compiler from the Gnu Compilers Collection(21). 
@@ -68,7 +69,9 @@ a path including two conditional branching with incompatible
 conditions would require a Boolean expression to be both true and
 false at the same time. 
 \vskip 0.1in
-There are powerful static analysers available such as Blast(24) available. However, for our need to ensure the complete mediation property, we don't need a framework which deals with complex types and data structures. The mediation property which we have described in the previous section despite introducing the above mentioned constraints provides us with precise modelling.
+There are powerful static analysers available such as Blast(24), available. However, for our need to ensure the complete mediation property, we don't need a framework which deals with complex types and data structures. Torvalds, creator and maintainer-in-chief of Linux has also developed a semantic analyzer for C called Sparse(27).
+\vskip 0.1in
+The mediation property which we have described in the previous section despite introducing the above mentioned constraints provides us with precise modelling.
 
 \section{Static analysis on paths}
 The goal of static analysis is to verify that information flow goes through a LSM hook or that it is impossible. In order to do so, we need to find the information flows for any CFG representing a system call.
@@ -108,9 +111,129 @@ LSM hook are impossible according to the static analysis.
 \subsection{Soundness of proofs}
 The soundness of our analysis is stated as follows.
 \vskip 0.1in
-\subsubsection{Proposition 1 (Soundness)}
-For each path p in a CFG, for all concrete configurations $\theta_1$
-and $\theta_2$, and all abstract configurations k$_1$ and k$_2$ such that
-$\theta$1 →∗p
-$\theta$2 and k1 ∗
-p k2, we have θ1  k1 =⇒ θ2  k2.
+\subsubsection{Theorem 1 }\textit{(Soundness)}
+\vskip 0.1in
+
+\textit{For each path p in a CFG, for all concrete configurations $\theta_1$
+	and $\theta_2$, and all abstract configurations k$_1$ and k$_2$ such that
+	$\theta_1$ $\rightarrow*_p$ $\theta_2$ and 
+	k$_1$ $\rightarrow*p$ k$_2$, we have $\theta_1$ $\vDash$ k$_1$ $\Longrightarrow$ $\theta_2$ $\vDash$ k$_2$}
+\vskip 0.2in
+In simple words, according to the soundness property, executable paths are defined as the set of all paths p such that there exist two concrete configurations $\theta_1$ and $\theta_2$ such that $\theta_1$ $\rightarrow_p$ $\theta_2$. A transition may not exist from on configuration to another if, along the path p, there is an edge bearing a condition which is not verified by the memory state. e. The set of impossible paths is defined as the set of paths p for which
+given any two abstract configurations k$_1$ and k$_2$, if k$_1$ $\rightarrow_p*$ k$_2$, then
+$\nvDash$ k$_2$. In other words, there is no satisfiable configuration that can
+result from the analysis of path p. The following proposition is an
+immediate consequence of the previous one.
+\vskip 0.2in
+
+\subsubsection{Theorem 2 }\textit{(Executable vs Impossible paths)}
+\vskip 0.1in
+\textit{The sets of
+	executable paths and impossible paths are disjoint.}
+
+\subsection{Implementation and results}
+The static analysis is run during the compilation itself. To this effect, we use the plug-ins developed by Georget et al. We also followed the same methodology as proposed by Georget et al. in the previous kernel version 4.3. We performed the experimentation for kernel version 4.20 which is the last stable release as of now. 
+\vskip 0.2in
+We use a plugin developed by Geroget () for GCC version 4.8.  This plugin is
+inserted into the compilation process, when the code is in GIMPLE
+form. We chose to place the plugin as late as possible in the compilation process, just before GCC abandons the graph intermediate
+representation, in order to benefit the most from optimizations
+and to work on a code as simple as possible. This allows us to do
+the assumptions we presented in the previous sections, such as
+the particular properties of loops. The representation we dump is
+broken down to very elementary pieces. The code we handle is in
+three-addresses mode, which has the effect that all complex boolean
+conditions that could exist in the original code base are already
+broken down in the appropriate number of binary decision nodes
+and branching. We also leverage as much as possible the compiler.
+For example, we rely on it to identify the loops in the CFG, to know
+the precise typing information of variables, and to run the points-to
+analysis on pointers. The latter is already implemented because it
+is used for several optimizations passes by GCC. Finally, the careful
+use of inlining and the fact that GCC applies some optimizations
+on the code actually limits the path explosion. We make use of the tools available on the kayrebt website (31).
+
+In order to do so, we first look at the system calls difference between kernel version 4.3 and 4.20. In total we identify 460 system calls in the stable release 4.20. But from the observation, we can also notice that not all system calls are capable of generating flows. Understanding the difference between the system calls between different kernel versions, itself is a separate study. The previous study was done by Hauser (32) for the kernel version 4.7 for his doctoral thesis. New system calls are added and used as per the applications requirements. 
+\vskip 0.2in
+Prior to running analysis,we first need to place a special annotations on tplaces in the code of system calls where information flows are performed. When the analysis is run on a system call, for each
+annotated places, a subgraph of the CFG built by GCC is considered:
+the subgraph of paths starting from the node representing the entry
+of the system call and going to the information flow node that
+do not pass through any LSM hook. These paths are the set P$_f$
+.
+For each path, we start with an empty abstract configuration and
+we update the configuration as we go along the path as per the
+transition rules of the abstract semantics. The satisfiability of the
+abstract configuration is tested by Yices [5], a SAT-solver equipped
+with a decidable subset of the classic theory of integers. If the
+constraint solver declares the set of constraints unsatisfiable then
+we declare the path impossible.
+\vskip 0.2in
+In order to understand and visualize the information flows, we use the tools available on http://kayrebt.gforge.inria.fr/. We categorize the flows into two types discrete flow and continuous flow as shown in the Table 2, 3 and 4. Table 2 shows a summary of the discrete flows for the different types of system calls. We have similar flows recorded for the write, send, receive system calls. Table 3 shows the system calls which were updates in the kernel version 4.20. However, Georget did a similar analysis and found the missing LSM hooks for 29 system calls which were updated from kernel version 3.2 to 4.3. Table 4 lists the system calls from version 4.3 to 4.20 whose information flows which are discrete do not trigger all LSM hooks. Table 5 shows system calls added from version 4.3 to 4.20 which do not trigger all LSM hooks when called. These system calls have continuous flows. This means that the flow is from both sides, the file to the memory and vice versa. However, we notice that the LSM hook is triggered only once during the exchange.
+
+\begin{table}[ht]
+	\caption{Read system calls}
+	\centering
+	\begin{tabular}{c c}
+		\hline\hline 
+	System calls & Discrete flow  \\
+		\hline
+		read & File $\rightarrow$ memory of the calling process \\
+			readv & File $\rightarrow$ memory of the calling process \\
+				preadv & File $\rightarrow$ memory of the calling process \\
+					pread64 & File $\rightarrow$ memory of the calling process \\
+
+	\end{tabular}	
+\end{table}
+
+
+\begin{table}[ht]
+	\caption{Updated system calls in version 4.20}
+	\centering
+	\begin{tabular}{c c}
+		\hline\hline 
+		System calls & Discrete flow  \\
+		\hline
+		vmsplice. & Memory of the calling process $\rightarrow$ tube \\
+		 & tube $\rightarrow$ memory of the calling process \\
+		process\_vm\_readv & Memory of another process  \\
+	 & $\rightarrow$ memory of the calling process \\
+	 	process\_vm\_writev & Memory of another process  \\
+	 & $\rightarrow$ memory of the calling process \\
+		
+	\end{tabular}	
+\end{table}
+
+\begin{table}[ht]
+	\caption{Updated system calls in version 4.20 which don't trigger LSM hooks but have discrete flows.}
+	\centering
+	\begin{tabular}{c c}
+		\hline\hline 
+		System calls & Discrete flow  \\
+		\hline
+		migrate\_pages & Memory of another process  \\
+		& $\rightarrow$ memory of the calling process \\
+		move\_pages & Memory of another process  \\
+		& $\rightarrow$ memory of the calling process \\
+		
+		
+	\end{tabular}	
+\end{table}
+
+\begin{table}[ht]
+	\caption{Updated system calls in version 4.20 which don't trigger LSM hooks but have discrete flows.}
+	\centering
+	\begin{tabular}{c c}
+		\hline\hline 
+		System calls & continuous flow  \\
+		\hline
+	
+		mmap\_pgoff. & Regular file or device  \\
+		& $\leftrightarrow$ memory of the current process \\
+		& regular file or device  \\
+		& $\rightarrow$ memory of the current process \\
+		
+	\end{tabular}	
+\end{table}
+
+
